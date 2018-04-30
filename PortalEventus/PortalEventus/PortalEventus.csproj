@@ -80,6 +80,7 @@
     <Content Include="Index.aspx" />
     <Content Include="packages.config" />
     <Content Include="Main.Master" />
+    <Content Include="RegisterAccount.aspx" />
     <Content Include="Secondary.Master" />
     <Content Include="Assets\fonts\fontawesome-webfont.eot" />
     <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
@@ -95,7 +96,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="RegisterAccount.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
