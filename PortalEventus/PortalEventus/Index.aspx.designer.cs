@@ -11,7 +11,7 @@ namespace PortalEventus
 {
 
 
-    public partial class RegisterAccount
+    public partial class Index
     {
     }
 }
