@@ -3,3 +3,6 @@
 ################################################################################
 
 /PortalEventus/.vs
+/PortalEventus/packages
+/PortalEventus/PortalEventus/bin
+/PortalEventus/PortalEventus/obj/Debug
