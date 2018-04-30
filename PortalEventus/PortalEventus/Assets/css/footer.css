@@ -1,0 +1,35 @@
+﻿footer {
+    font-size: 0.8125rem;
+    margin-bottom: 0;
+    padding-top: 20px;
+}
+footer div.container-fluid {
+    padding-top: 10px;
+}
+
+footer img {
+    filter: grayscale(100%);
+    -webkit-filter: grayscale(100%);
+    width: 130px;
+}
+
+footer i.fa {
+    font-size: 1.5rem;
+    line-height: 38px;
+    margin: 2px;
+    text-align: center;
+    vertical-align: middle;
+    width: 30px;
+}
+footer i.fa.fa-facebook-square{
+    color: #3B5998;
+}
+footer i.fa.fa-twitter{
+    color: #00aced;
+}
+footer i.fa.fa-google-plus-circle{
+    color: #DC4E41;
+}
+footer i.fa.fa-youtube-play{
+    color: #FF0101;
+}
