@@ -40,7 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventoBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservaBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BA_Eventus\BA_Eventus.csproj">
+      <Project>{F35AA894-65C6-450E-AB49-4C58E67015D9}</Project>
+      <Name>BA_Eventus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BE_Eventus\BE_Eventus.csproj">
+      <Project>{201C487A-384E-4AF0-839A-60F26E049280}</Project>
+      <Name>BE_Eventus</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
