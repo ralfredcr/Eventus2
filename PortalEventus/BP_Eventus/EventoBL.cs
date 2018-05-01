@@ -17,5 +17,10 @@ namespace BP_Eventus
             return interfac.InsertEvento(obj);
         }
 
+        public List<EventoBE> LstEvento(string descripcion)
+        {
+            return interfac.LstEvento(descripcion);
+        }
+
     }
 }

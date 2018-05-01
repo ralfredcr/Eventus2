@@ -54,5 +54,61 @@ namespace BA_Eventus
 
         }
 
+        public List<EventoBE> LstEvento(string descripcion)
+        {
+            try
+            {
+                List<EventoBE> resultado = new List<EventoBE>();
+
+
+                using (SqlConnection connection = new SqlConnection(cadena))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("pr_LstEvento", connection))
+                    {
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;                   
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                            {
+                                while (dr.Read())
+                                {
+                                    EventoBE entidad = new EventoBE();
+                                    entidad.eventoid = dr.GetInt32(0);
+                                    entidad.titulo = dr.GetString(1);
+                                    entidad.descripcion = dr.GetString(2);
+                                    entidad.descripcionAdicional = dr.GetString(3);
+                                    entidad.categoriaid = dr.GetInt32(4);
+                                    entidad.descripcionCateg = dr.GetString(5);
+                                    if (dr["RutaImagen"] != DBNull.Value)
+                                        entidad.RutaImagen = (byte[])dr["RutaImagen"];
+                                    else
+                                    {
+                                        entidad.RutaImagen = null;
+                                    }
+                                    entidad.fechaInicio = dr.GetDateTime(7);
+                                    entidad.fechaFin = dr.GetDateTime(8);
+                                    entidad.estado = dr.GetInt32(9);
+                                    resultado.Add(entidad);
+
+                                }
+                            }
+                            dr.Dispose();
+                        }
+                    }
+                    connection.Close();
+                    return resultado;
+                }
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            return null;
+        }
+
+
     }
 }

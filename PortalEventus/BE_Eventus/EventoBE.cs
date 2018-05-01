@@ -23,6 +23,7 @@ namespace BE_Eventus
         public int usuarioActualiza { get; set; }
         public DateTime fechaRegistro { get; set; }
         public DateTime fechaActualiza { get; set; }
+        public string descripcionCateg { get; set; }
 
     }
 }
