@@ -29,8 +29,10 @@ namespace PortalEventus.Registro
         {
             string mensaje = "<script type='text/javascript'>alert('{0}')</script>";
 
-            mensaje = string.Format(mensaje, msg);
-            ScriptManager.RegisterStartupScript(this, null, "msgBox", mensaje, true);
+            //mensaje = string.Format(mensaje, msg);
+            //ScriptManager.RegisterStartupScript(this, null, "msgBox", mensaje, true);
+
+            ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert(" + mensaje + ");", true);
 
         }
         private void paisListar()
