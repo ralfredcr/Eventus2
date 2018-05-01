@@ -83,6 +83,7 @@
     <Content Include="Evento\RegistrarEvento.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="Login\Login.aspx" />
+    <Content Include="Login\RegisterAccount.aspx" />
     <Content Include="packages.config" />
     <Content Include="Main.Master" />
     <Content Include="Assets\fonts\fontawesome-webfont.eot" />
@@ -146,6 +147,13 @@
     </Compile>
     <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\RegisterAccount.aspx.cs">
+      <DependentUpon>RegisterAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\RegisterAccount.aspx.designer.cs">
+      <DependentUpon>RegisterAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>

@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-<div style="position: absolute; left:30%; top:20%" id="capa1">
+<div style="position: absolute; left:10%; top:20%" id="capa1">
     <form id="form" runat="server">
         <table>
             <tr>
@@ -40,15 +40,16 @@
                 <td>Sexo</td>
                 <td>
                     <asp:RadioButtonList ID="rbSexo" runat="server">
-                        <asp:ListItem Value="rbMasculino" Text="Masculino"></asp:ListItem>
-                        <asp:ListItem Value="rbFememnino" Text="Femenino"></asp:ListItem>
+                        <asp:ListItem Value="1" Text="Masculino"></asp:ListItem>
+                        <asp:ListItem Value="2" Text="Femenino"></asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
                 <td>Nacionalidad</td>
                 <td>
-                    <asp:RadioButtonList ID="rbNacionalidad" runat="server">
-                        <asp:ListItem Value="rbPeruana" Text="Peruana"></asp:ListItem>
-                        <asp:ListItem Value="rbExtranjera" Text="Extranjera"></asp:ListItem>
+                    <asp:RadioButtonList ID="rbNacionalidad" runat="server"  AutoPostBack="true"
+                        OnSelectedIndexChanged="rbNacionalidad_SelectedIndexChanged">
+                        <asp:ListItem Value="1" Text="Peruana"></asp:ListItem>
+                        <asp:ListItem Value="2" Text="Extranjera"></asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
             </tr>
@@ -81,24 +82,32 @@
             <tr>
                 <td>Pais</td>
                 <td>
-                    <asp:DropDownList ID="ddlPais" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlPais" runat="server" Enabled="false"></asp:DropDownList>
                 </td>
                 <td>Departamento</td>
                 <td>
-                    <asp:DropDownList ID="ddlDepartamento" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlDepartamento" runat="server" Enabled="false"
+                        OnSelectedIndexChanged="ddlDepartamento_SelectedIndexChanged"></asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td>Provincia</td>
                 <td>
-                    <asp:DropDownList ID="ddlProvincia" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlProvincia" runat="server" Enabled="false"></asp:DropDownList>
                 </td>
                 <td>Distrito</td>
                 <td>
-                    <asp:DropDownList ID="ddlDistrito" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlDistrito" runat="server" Enabled="false"></asp:DropDownList>
                 </td>
             </tr>
-
+            <tr>
+                <td colspan="2">
+                    <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" />
+                </td>
+                <td colspan="2">
+                    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
+                </td>
+            </tr>
         </table>
        </form>
     </div>
