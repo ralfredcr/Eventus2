@@ -49,6 +49,15 @@ namespace PortalEventus.Evento {
         protected global::System.Web.UI.WebControls.DropDownList cboCategoria;
         
         /// <summary>
+        /// Control Upload.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputFile Upload;
+        
+        /// <summary>
         /// Control dtFechaInicio.
         /// </summary>
         /// <remarks>
