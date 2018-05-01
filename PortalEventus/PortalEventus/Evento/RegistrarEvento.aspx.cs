@@ -40,7 +40,12 @@ namespace PortalEventus.Evento
         public void CargarCategoria()
         {
             CategoriaBE obj = new CategoriaBE();
-            List<CategoriaBE> lista = iCategoria.LstCategoria();
+            List<CategoriaBE> lista = new List<CategoriaBE>();
+            obj.categoriaid = -1;
+            obj.descripcion = "Seleccionar";
+            
+            lista = iCategoria.LstCategoria();
+            lista.Add(obj);
 
             this.cboCategoria.DataSource = lista;
             this.cboCategoria.DataTextField = "descripcion";
