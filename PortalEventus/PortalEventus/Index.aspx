@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="PortalEventus.Index" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
@@ -9,10 +10,10 @@
             <div class="row">
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
-                    <form class="form-inline justify-content-center d-flex flex-column flex-md-row">
-                        <input class="form-control mt-3" type="search" placeholder="Busca eventos, conciertos... ¡lo que quieras!" aria-label="Search">
-                        <button class="btn btn-success mt-3" type="submit">Search</button>
-                    </form>
+                    <%--<form class="form-inline justify-content-center d-flex flex-column flex-md-row">     --%>
+                    <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control mt-3"></asp:TextBox>
+                    <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-success mt-3" OnClick="btnBuscar_Click" />
+                    <%-- </form>--%>
                 </div>
                 <div class="col-md-1"></div>
             </div>

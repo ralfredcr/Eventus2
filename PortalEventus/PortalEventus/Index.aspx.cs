@@ -13,5 +13,14 @@ namespace PortalEventus
         {
 
         }
+
+
+
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string desc = txtBuscar.Text;
+            Response.Redirect("Evento/ListarEvento.aspx?descripcion=" + desc);
+
+        }
     }
 }

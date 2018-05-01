@@ -11,6 +11,21 @@ namespace PortalEventus.Evento
 {
     public partial class ListarEvento : System.Web.UI.Page
     {
+        public string descripcion
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Request.QueryString["descripcion"]))
+                {
+                    return Request.QueryString["descripcion"].ToString();
+                }
+                else
+                {
+                    return "";
+                }
+            }
+        }
+
         EventoBL iEvento = new EventoBL();
 
         protected void Page_Load(object sender, EventArgs e)
@@ -26,7 +41,7 @@ namespace PortalEventus.Evento
             
             List<EventoBE> lista = new List<EventoBE>();
 
-            lista = iEvento.LstEvento("");
+            lista = iEvento.LstEvento(descripcion);
             gEvento.DataSource = lista;
             gEvento.DataBind();
         }
