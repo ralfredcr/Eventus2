@@ -77,12 +77,14 @@
     <Content Include="Assets\img\eventus.png" />
     <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Evento\ActualizarEvento.aspx" />
+    <Content Include="Evento\DetalleEvento.aspx" />
     <Content Include="Evento\ListarEvento.aspx" />
     <Content Include="Evento\RegistrarEvento.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="Login\Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Main.Master" />
-    <Content Include="Login\RegisterAccount.aspx" />
     <Content Include="Assets\fonts\fontawesome-webfont.eot" />
     <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
@@ -100,6 +102,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Evento\ActualizarEvento.aspx.cs">
+      <DependentUpon>ActualizarEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Evento\ActualizarEvento.aspx.designer.cs">
+      <DependentUpon>ActualizarEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Evento\DetalleEvento.aspx.cs">
+      <DependentUpon>DetalleEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Evento\DetalleEvento.aspx.designer.cs">
+      <DependentUpon>DetalleEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Evento\ListarEvento.aspx.cs">
       <DependentUpon>ListarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -124,6 +140,13 @@
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -132,13 +155,6 @@
       <DependentUpon>Main.Master</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Login\RegisterAccount.aspx.cs">
-      <DependentUpon>RegisterAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Login\RegisterAccount.aspx.designer.cs">
-      <DependentUpon>RegisterAccount.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
