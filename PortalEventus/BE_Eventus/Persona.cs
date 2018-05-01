@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE_Eventus
 {
-    class Persona
+    public class Persona
     {
         public String nombrePersona { get; set; }
         public String apePersona { get; set; }
@@ -23,7 +23,7 @@ namespace BE_Eventus
         public int provincia { get; set; }
         public int distrito { get; set; }
     }
-    class Ususario
+    public class Ususario
     {
         public String nombreUsuario { get; set; }
         public String contrasena { get; set; }
