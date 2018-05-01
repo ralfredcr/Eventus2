@@ -39,14 +39,15 @@
             <tr>
                 <td>Sexo</td>
                 <td>
-                    <asp:RadioButtonList ID="rbSexo" runat="server" AutoPostBack="true">
+                    <asp:RadioButtonList ID="rbSexo" runat="server">
                         <asp:ListItem Value="1" Text="Masculino"></asp:ListItem>
                         <asp:ListItem Value="2" Text="Femenino"></asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
                 <td>Nacionalidad</td>
                 <td>
-                    <asp:RadioButtonList ID="rbNacionalidad" runat="server" OnSelectedIndexChanged="rbNacionalidad_SelectedIndexChanged">
+                    <asp:RadioButtonList ID="rbNacionalidad" runat="server"  AutoPostBack="true"
+                        OnSelectedIndexChanged="rbNacionalidad_SelectedIndexChanged">
                         <asp:ListItem Value="1" Text="Peruana"></asp:ListItem>
                         <asp:ListItem Value="2" Text="Extranjera"></asp:ListItem>
                     </asp:RadioButtonList>
