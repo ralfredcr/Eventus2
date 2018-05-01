@@ -80,6 +80,7 @@
     <Content Include="Evento\ListarEvento.aspx" />
     <Content Include="Evento\RegistrarEvento.aspx" />
     <Content Include="Index.aspx" />
+    <Content Include="Login\Login.aspx" />
     <Content Include="packages.config" />
     <Content Include="Main.Master" />
     <Content Include="Login\RegisterAccount.aspx" />
@@ -123,6 +124,13 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
