@@ -8,5 +8,8 @@ namespace BP_Eventus
 {
     public class ReservaBL
     {
+        //JJ
+        int prueba;
+
     }
 }
