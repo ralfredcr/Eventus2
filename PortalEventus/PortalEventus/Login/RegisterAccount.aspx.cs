@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace PortalEventus
+namespace PortalEventus.Registro
 {
     public partial class RegisterAccount : System.Web.UI.Page
     {
