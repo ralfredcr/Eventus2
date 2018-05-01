@@ -77,6 +77,8 @@
     <Content Include="Assets\img\eventus.png" />
     <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Evento\ActualizarEvento.aspx" />
+    <Content Include="Evento\DetalleEvento.aspx" />
     <Content Include="Evento\ListarEvento.aspx" />
     <Content Include="Evento\RegistrarEvento.aspx" />
     <Content Include="Index.aspx" />
@@ -101,6 +103,20 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Evento\ActualizarEvento.aspx.cs">
+      <DependentUpon>ActualizarEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Evento\ActualizarEvento.aspx.designer.cs">
+      <DependentUpon>ActualizarEvento.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Evento\DetalleEvento.aspx.cs">
+      <DependentUpon>DetalleEvento.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Evento\DetalleEvento.aspx.designer.cs">
+      <DependentUpon>DetalleEvento.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Evento\ListarEvento.aspx.cs">
       <DependentUpon>ListarEvento.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

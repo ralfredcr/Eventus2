@@ -24,6 +24,7 @@ namespace BE_Eventus
         public DateTime fechaRegistro { get; set; }
         public DateTime fechaActualiza { get; set; }
         public string descripcionCateg { get; set; }
+        public string descripcionEvento { get; set; }
 
     }
 }

@@ -17,9 +17,19 @@ namespace BP_Eventus
             return interfac.InsertEvento(obj);
         }
 
+        public int UpdateEvento(EventoBE obj)
+        {
+            return interfac.UpdateEvento(obj);
+        }
+
         public List<EventoBE> LstEvento(string descripcion)
         {
             return interfac.LstEvento(descripcion);
+        }
+
+        public EventoBE ObtenerEvento(int eventoid)
+        {
+            return interfac.ObtenerEvento(eventoid);
         }
 
     }

@@ -10,15 +10,35 @@ using System.Web.UI.WebControls;
 
 namespace PortalEventus.Evento
 {
-    public partial class RegistrarEvento : System.Web.UI.Page
+    public partial class ActualizarEvento : System.Web.UI.Page
     {
+        public int eventoid
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(Request.QueryString["eventoid"]))
+                {
+                    return int.Parse(Request.QueryString["eventoid"].ToString());
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
+
         CategoriaBL iCategoria = new CategoriaBL();
         EventoBL iEvento = new EventoBL();
+
+        static byte[] bytesGlob;
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 CargarCategoria();
+                CargarEvento();
             }
         }
 
@@ -36,7 +56,7 @@ namespace PortalEventus.Evento
             //Set the contenttype based on File Extension
             switch (ext)
 
-            {              
+            {
                 case ".jpg":
                     contenttype = "image/jpg";
                     break;
@@ -53,11 +73,20 @@ namespace PortalEventus.Evento
             Byte[] bytes = br.ReadBytes((Int32)fs.Length);
 
             EventoBE obj = new EventoBE();
+            obj.eventoid = 5;
             obj.titulo = txtTitulo.Text;
             obj.descripcion = txtDescripcion.Text;
             obj.descripcionAdicional = txtDescripcionAdicional.Text;
             obj.categoriaid = Convert.ToInt32(string.IsNullOrEmpty(cboCategoria.SelectedValue) ? "-1" : cboCategoria.SelectedValue);
-            obj.RutaImagen = bytes;
+            if (bytes.Length>0)
+            {
+                obj.RutaImagen = bytes;
+            }
+            else
+            {
+                obj.RutaImagen = bytesGlob;
+            }
+            
             obj.fechaInicio = dtFechaInicio.SelectedDate;
             obj.fechaFin = dtFechaFin.SelectedDate;
             obj.estado = 1;
@@ -65,9 +94,13 @@ namespace PortalEventus.Evento
             obj.usuarioActualiza = -1;
 
             int resultado;
-            resultado = iEvento.InsertEvento(obj);
+            resultado = iEvento.UpdateEvento(obj);
 
-
+            if (resultado == 1)
+            {
+                CargarCategoria();
+                CargarEvento();
+            }
         }
 
         public void CargarCategoria()
@@ -76,7 +109,7 @@ namespace PortalEventus.Evento
             List<CategoriaBE> lista = new List<CategoriaBE>();
             obj.categoriaid = -1;
             obj.descripcion = "Seleccionar";
-            
+
             lista = iCategoria.LstCategoria();
             lista.Add(obj);
 
@@ -86,5 +119,25 @@ namespace PortalEventus.Evento
             this.cboCategoria.DataBind();
 
         }
+
+        public void CargarEvento()
+        {
+            EventoBE obj = new EventoBE();
+            obj = iEvento.ObtenerEvento(5);
+
+            txtTitulo.Text = obj.titulo;
+            txtDescripcion.Text = obj.descripcionEvento;
+            txtDescripcionAdicional.Text = obj.descripcionAdicional;
+            cboCategoria.SelectedValue = obj.categoriaid.ToString();
+            dtFechaInicio.SelectedDate = obj.fechaInicio;
+            dtFechaFin.SelectedDate = obj.fechaFin;
+
+            byte[] bytes = obj.RutaImagen;
+            bytesGlob = bytes;
+            string imag = Convert.ToBase64String(bytes,0, bytes.Length);
+            Image1.ImageUrl = "data:image/jpeg;base64," + imag;
+
+        }
+
     }
 }

@@ -1,14 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RegistrarEvento.aspx.cs" Inherits="PortalEventus.Evento.RegistrarEvento" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="ActualizarEvento.aspx.cs" Inherits="PortalEventus.Evento.ActualizarEvento" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
-
-
     <table class="w-100">
         <tr style="text-align: center; font-size: 23px">
-            <td colspan="2">Registrar Evento</td>
+            <td colspan="2">Actualizar Evento</td>
         </tr>
         <tr>
             <td style="color: blue; font-size: 18px">Titulo:</td>
@@ -49,8 +46,16 @@
             <td style="color: blue; font-size: 18px">Imagen:</td>
         </tr>
         <tr>
-            <td>            
+            <td>
                 <asp:FileUpload ID="FileUpload1" runat="server"  Width="650px"/>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+                <asp:Image ID="Image1" runat="server" Height="200px" Width="450px" />
             </td>
         </tr>
         <tr>
@@ -79,7 +84,5 @@
             </td>
         </tr>
     </table>
-
-
 
 </asp:Content>
