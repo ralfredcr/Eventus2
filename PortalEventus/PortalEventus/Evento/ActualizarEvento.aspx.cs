@@ -73,7 +73,7 @@ namespace PortalEventus.Evento
             Byte[] bytes = br.ReadBytes((Int32)fs.Length);
 
             EventoBE obj = new EventoBE();
-            obj.eventoid = 5;
+            obj.eventoid = 1;
             obj.titulo = txtTitulo.Text;
             obj.descripcion = txtDescripcion.Text;
             obj.descripcionAdicional = txtDescripcionAdicional.Text;
@@ -123,7 +123,7 @@ namespace PortalEventus.Evento
         public void CargarEvento()
         {
             EventoBE obj = new EventoBE();
-            obj = iEvento.ObtenerEvento(5);
+            obj = iEvento.ObtenerEvento(1);
 
             txtTitulo.Text = obj.titulo;
             txtDescripcion.Text = obj.descripcionEvento;
@@ -132,10 +132,15 @@ namespace PortalEventus.Evento
             dtFechaInicio.SelectedDate = obj.fechaInicio;
             dtFechaFin.SelectedDate = obj.fechaFin;
 
-            byte[] bytes = obj.RutaImagen;
-            bytesGlob = bytes;
-            string imag = Convert.ToBase64String(bytes,0, bytes.Length);
-            Image1.ImageUrl = "data:image/jpeg;base64," + imag;
+            if (obj.RutaImagen != null)
+            {
+                byte[] bytes = obj.RutaImagen;
+                bytesGlob = bytes;
+                string imag = Convert.ToBase64String(bytes, 0, bytes.Length);
+                Image1.ImageUrl = "data:image/jpeg;base64," + imag;
+
+            }
+            
 
         }
 
