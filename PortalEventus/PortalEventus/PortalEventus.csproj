@@ -150,6 +150,10 @@
       <Project>{201C487A-384E-4AF0-839A-60F26E049280}</Project>
       <Name>BE_Eventus</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BP_Eventus\BP_Eventus.csproj">
+      <Project>{4742B9BA-59C5-4890-83F7-DA4248F13F97}</Project>
+      <Name>BP_Eventus</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

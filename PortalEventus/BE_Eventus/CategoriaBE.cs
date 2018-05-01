@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace BE_Eventus
 {
-    class CategoriaBE
+    public class CategoriaBE
     {
+        public int categoriaid { get; set; }
+        public string descripcion { get; set; }
+
     }
 }

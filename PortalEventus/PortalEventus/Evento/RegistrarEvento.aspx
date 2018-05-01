@@ -38,7 +38,7 @@
         </tr>
         <tr>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server" Width="650px"></asp:TextBox>
+                <asp:TextBox ID="txtDescripcionAdicional" runat="server" Width="650px"></asp:TextBox>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -48,7 +48,7 @@
         </tr>
         <tr>
             <td>
-                <asp:DropDownList ID="DropDownList2" runat="server" Width="650px"></asp:DropDownList>
+                <asp:DropDownList ID="cboCategoria" runat="server" Width="650px"></asp:DropDownList>
 
             </td>
             <td>&nbsp;</td>
@@ -59,7 +59,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Calendar ID="Calendar1" runat="server"></asp:Calendar>
+                <asp:Calendar ID="dtFechaInicio" runat="server"></asp:Calendar>
             </td>
             <td>&nbsp;</td>
         </tr>
@@ -69,7 +69,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Calendar ID="Calendar2" runat="server"></asp:Calendar>
+                <asp:Calendar ID="dtFechaFin" runat="server"></asp:Calendar>
             </td>
             <td>&nbsp;</td>
         </tr>
