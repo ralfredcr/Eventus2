@@ -71,10 +71,12 @@
     <Content Include="Assets\css\font-awesome.css" />
     <Content Include="Assets\css\font-awesome.min.css" />
     <Content Include="Assets\css\footer.css" />
+    <Content Include="Assets\css\security.css" />
     <Content Include="Assets\css\style.css" />
     <Content Include="Assets\fonts\fontawesome-webfont.svg" />
     <Content Include="Assets\img\bkeventus.jpg" />
     <Content Include="Assets\img\eventus.png" />
+    <Content Include="Assets\img\mastlogin.png" />
     <Content Include="Assets\js\bootstrap.js" />
     <Content Include="Assets\js\bootstrap.min.js" />
     <Content Include="Evento\ActualizarEvento.aspx" />
@@ -91,6 +93,7 @@
     <Content Include="Assets\fonts\fontawesome-webfont.woff" />
     <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
     <Content Include="Assets\fonts\FontAwesome.otf" />
+    <Content Include="Login\Security.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -154,6 +157,13 @@
     </Compile>
     <Compile Include="Login\RegisterAccount.aspx.designer.cs">
       <DependentUpon>RegisterAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login\Security.Master.cs">
+      <DependentUpon>Security.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login\Security.Master.designer.cs">
+      <DependentUpon>Security.Master</DependentUpon>
     </Compile>
     <Compile Include="Main.Master.cs">
       <DependentUpon>Main.Master</DependentUpon>
