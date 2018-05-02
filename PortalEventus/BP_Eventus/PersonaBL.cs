@@ -47,5 +47,48 @@ namespace BP_Eventus
                 throw;
             }
         }
+
+        public List<Distrito> distritoListar(String codDepartamento, String codProvincia)
+        {
+            try
+            {
+                PersonaDAO objPersona = new PersonaDAO();
+                return objPersona.distritoListar(codDepartamento, codProvincia);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        public List<TipoDocumento> tipoDocListar()
+        {
+            try
+            {
+                PersonaDAO objPersona = new PersonaDAO();
+                return objPersona.tipoDocListar();
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public Boolean usuarioRegistrar(Persona obj)
+        {
+            try
+            {
+                PersonaDAO objPersona = new PersonaDAO();
+                return objPersona.usuarioRegistrar(obj);
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public Boolean usuarioExisteValidar(String usuario)
+        {
+            PersonaDAO objPersona = new PersonaDAO();
+            return objPersona.usuarioExisteValidar(usuario);
+        }
     }
 }
