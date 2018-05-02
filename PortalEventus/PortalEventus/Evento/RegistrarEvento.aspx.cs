@@ -14,6 +14,8 @@ namespace PortalEventus.Evento
     {
         CategoriaBL iCategoria = new CategoriaBL();
         EventoBL iEvento = new EventoBL();
+        ZonaEventoBL iZonaEvento = new ZonaEventoBL();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -68,6 +70,27 @@ namespace PortalEventus.Evento
 
             int resultado;
             resultado = iEvento.InsertEvento(obj);
+
+            if (resultado != 0)
+            {
+                foreach (GridViewRow row in gZona.Rows)
+                {
+                    TextBox vzona = (TextBox)row.FindControl("txtZona");
+                    TextBox vprecio = (TextBox)row.FindControl("txtPrecio");
+                    TextBox vcantidad = (TextBox)row.FindControl("txtCantidad");
+
+                    ZonaEventoBE obj2 = new ZonaEventoBE();
+
+                    obj2.eventoid = resultado;
+                    obj2.zona = vzona.Text;
+                    obj2.precio = Convert.ToDecimal(vprecio.Text) ;
+                    obj2.cantidadMax = Convert.ToInt32(vcantidad.Text) ;
+
+                    
+                    iZonaEvento.InsertEventoZona(obj2);
+
+                }
+            }
 
 
         }

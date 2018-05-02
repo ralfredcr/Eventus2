@@ -10,7 +10,7 @@ namespace BE_Eventus
     {
         public int eventoid { get; set; }
         public String zona { get; set; }
-        public String precio { get; set; }
+        public decimal precio { get; set; }
         public int cantidadMax { get; set; }
         public int num { get; set; }
     }

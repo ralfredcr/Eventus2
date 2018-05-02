@@ -19,7 +19,7 @@ namespace BA_Eventus
         {
             try
             {
-
+                int resultado = 0;
                 using (SqlConnection connection = new SqlConnection(cadena))
                 {
                     connection.Open();
@@ -35,12 +35,18 @@ namespace BA_Eventus
                         cmd.Parameters.AddWithValue("@estado", obj.estado);
                         cmd.Parameters.AddWithValue("@usuarioCreacion", obj.usuarioCreacion);
                         cmd.Parameters.AddWithValue("@usuarioActualiza", obj.usuarioActualiza);
+                        SqlParameter outparam = cmd.Parameters.Add("@new_identity", SqlDbType.Int);
+                        outparam.Direction = ParameterDirection.Output;
                         cmd.CommandType = CommandType.StoredProcedure;
 
                         cmd.ExecuteNonQuery();
+
+                        resultado = Convert.ToInt32(cmd.Parameters["@new_identity"].Value);
+
                         connection.Close();
 
-                        return 1;
+
+                        return resultado;
 
                     }
 
