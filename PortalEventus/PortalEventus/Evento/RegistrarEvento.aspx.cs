@@ -19,7 +19,7 @@ namespace PortalEventus.Evento
             if (!IsPostBack)
             {
                 CargarCategoria();
-                
+                CargarZona();
 
             }
         }
@@ -88,10 +88,22 @@ namespace PortalEventus.Evento
 
         public void CargarZona()
         {
-            List<CategoriaBE> lista = new List<CategoriaBE>();
+            List<ZonaEventoBE> lista = new List<ZonaEventoBE>();
+            int cantidad = 0;
+
+            for (int i = 0; i < 5; i++)
+            {
+                ZonaEventoBE obj = new ZonaEventoBE();
+                cantidad = cantidad + 1;
+                obj.num = cantidad;
+                lista.Add(obj);
+            }
+
+            gZona.DataSource = lista;
+            gZona.DataBind();
 
 
-            
+
         }
 
     }

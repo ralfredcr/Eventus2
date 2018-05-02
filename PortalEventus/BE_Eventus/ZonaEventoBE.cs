@@ -12,5 +12,6 @@ namespace BE_Eventus
         public String zona { get; set; }
         public String precio { get; set; }
         public int cantidadMax { get; set; }
+        public int num { get; set; }
     }
 }

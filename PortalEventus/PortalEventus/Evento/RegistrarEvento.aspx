@@ -76,25 +76,26 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>Lista Zonas</td>
         </tr>
         <tr>
             <td>
                 <asp:GridView ID="gZona" runat="server" AutoGenerateColumns="False">
                     <Columns>
+                        <asp:BoundField DataField="num" HeaderText="Nro" />
                         <asp:TemplateField HeaderText="Zona">
                             <ItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtZona" runat="server"></asp:TextBox>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">
                             <ItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Cantidad Maximo">
                             <ItemTemplate>
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
                             </ItemTemplate>
                         </asp:TemplateField>
                     </Columns>
@@ -104,7 +105,7 @@
             </td>
         </tr>
         <tr>
-            <td></td>
+            <td>&nbsp;</td>
         </tr>
         <tr>
             <td>
