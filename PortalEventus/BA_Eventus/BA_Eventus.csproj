@@ -46,6 +46,7 @@
     <Compile Include="PersonaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservaDAO.cs" />
+    <Compile Include="ZonaEventoDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BE_Eventus\BE_Eventus.csproj">
