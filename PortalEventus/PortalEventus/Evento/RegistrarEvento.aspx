@@ -1,17 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RegistrarEvento.aspx.cs" Inherits="PortalEventus.Evento.RegistrarEvento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-
-        $(document).ready(function () {
-            
-            $('#<%=gZona.ClientID %>').Scrollable({
-                ScrollHeight: 300,
-                Width: 467
-            });
-        });
-
-    </script>
+  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 

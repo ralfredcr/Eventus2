@@ -85,5 +85,14 @@ namespace PortalEventus.Evento
             this.cboCategoria.Items.Insert(0, new ListItem("Seleccionar", "-1"));
             this.cboCategoria.SelectedIndex = 0;
         }
+
+        public void CargarZona()
+        {
+            List<CategoriaBE> lista = new List<CategoriaBE>();
+
+
+            
+        }
+
     }
 }
