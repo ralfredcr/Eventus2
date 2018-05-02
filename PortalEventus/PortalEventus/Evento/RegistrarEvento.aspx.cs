@@ -19,6 +19,8 @@ namespace PortalEventus.Evento
             if (!IsPostBack)
             {
                 CargarCategoria();
+                
+
             }
         }
 
@@ -72,19 +74,16 @@ namespace PortalEventus.Evento
 
         public void CargarCategoria()
         {
-            CategoriaBE obj = new CategoriaBE();
             List<CategoriaBE> lista = new List<CategoriaBE>();
-            obj.categoriaid = -1;
-            obj.descripcion = "Seleccionar";
             
             lista = iCategoria.LstCategoria();
-            lista.Add(obj);
 
             this.cboCategoria.DataSource = lista;
             this.cboCategoria.DataTextField = "descripcion";
             this.cboCategoria.DataValueField = "categoriaid";
             this.cboCategoria.DataBind();
-
+            this.cboCategoria.Items.Insert(0, new ListItem("Seleccionar", "-1"));
+            this.cboCategoria.SelectedIndex = 0;
         }
     }
 }

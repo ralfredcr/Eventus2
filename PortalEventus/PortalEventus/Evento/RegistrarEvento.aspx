@@ -1,6 +1,17 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RegistrarEvento.aspx.cs" Inherits="PortalEventus.Evento.RegistrarEvento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            
+            $('#<%=gZona.ClientID %>').Scrollable({
+                ScrollHeight: 300,
+                Width: 467
+            });
+        });
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
@@ -49,8 +60,8 @@
             <td style="color: blue; font-size: 18px">Imagen:</td>
         </tr>
         <tr>
-            <td>            
-                <asp:FileUpload ID="FileUpload1" runat="server"  Width="650px"/>
+            <td>
+                <asp:FileUpload ID="FileUpload1" runat="server" Width="650px" />
             </td>
         </tr>
         <tr>
@@ -59,6 +70,7 @@
         <tr>
             <td>
                 <asp:Calendar ID="dtFechaInicio" runat="server"></asp:Calendar>
+                <asp:TextBox ID="txtFechaInicio" runat="server" placeholder="Date/Month/Year" />
             </td>
         </tr>
         <tr>
@@ -67,10 +79,42 @@
         <tr>
             <td>
                 <asp:Calendar ID="dtFechaFin" runat="server"></asp:Calendar>
+                <asp:TextBox ID="txtFechaFin" runat="server" placeholder="Date/Month/Year" />
             </td>
         </tr>
         <tr>
             <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:GridView ID="gZona" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:TemplateField HeaderText="Zona">
+                            <ItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Precio">
+                            <ItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Cantidad Maximo">
+                            <ItemTemplate>
+                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                    </Columns>
+                    <HeaderStyle Height="20px" />
+                </asp:GridView>
+
+            </td>
+        </tr>
+        <tr>
+            <td></td>
         </tr>
         <tr>
             <td>

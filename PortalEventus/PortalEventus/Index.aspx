@@ -11,7 +11,7 @@
                 <div class="col-md-1"></div>
                 <div class="col-md-10">
                     <%--<form class="form-inline justify-content-center d-flex flex-column flex-md-row">     --%>
-                    <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control mt-3"></asp:TextBox>
+                    <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control mt-3" placeholder="Busca eventos, conciertos... ¡lo que quieras!"></asp:TextBox>
                     <asp:Button ID="btnBuscar" runat="server" Text="Buscar" CssClass="btn btn-success mt-3" OnClick="btnBuscar_Click" />
                     <%-- </form>--%>
                 </div>
