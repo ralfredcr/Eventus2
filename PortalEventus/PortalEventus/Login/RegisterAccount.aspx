@@ -11,13 +11,19 @@
     <form id="form" runat="server">
         <table>
             <tr>
-                <td>Nombre</td>
-                <td>
+                <td>Nombres</td>
+                <td colspan="3">
                     <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                 </td>
-                <td>Apellido</td>
+            </tr>
+            <tr>
+                <td>Apellido Paterno</td>
                 <td>
-                    <asp:TextBox ID="txtApellido" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="txtApeparterno" runat="server"></asp:TextBox>
+                </td>
+                <td>Apellido Materno</td>
+                <td>
+                    <asp:TextBox ID="txtApeMaterno" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -56,7 +62,11 @@
             <tr>
                 <td>Tipo documento</td>
                 <td>
-                    <asp:DropDownList ID="ddlTipoDocumento" runat="server"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlTipoDocumento" runat="server">
+                        <asp:ListItem Value="1" Text="DNI"></asp:ListItem>
+                        <asp:ListItem Value="2" Text="Carnet Extranjeria"></asp:ListItem>
+                        <asp:ListItem Value="2" Text="Pasaporte"></asp:ListItem>
+                    </asp:DropDownList>
                 </td>
                 <td>Nro. documento</td>
                 <td>
@@ -82,22 +92,36 @@
             <tr>
                 <td>Pais</td>
                 <td>
-                    <asp:DropDownList ID="ddlPais" runat="server" Enabled="false"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlPais" runat="server" AutoPostBack="true"
+                        OnSelectedIndexChanged="ddlPais_SelectedIndexChanged"></asp:DropDownList>
                 </td>
                 <td>Departamento</td>
                 <td>
-                    <asp:DropDownList ID="ddlDepartamento" runat="server" Enabled="false"
+                    <asp:DropDownList ID="ddlDepartamento" runat="server" Enabled="false" AutoPostBack="true"
                         OnSelectedIndexChanged="ddlDepartamento_SelectedIndexChanged"></asp:DropDownList>
                 </td>
             </tr>
             <tr>
                 <td>Provincia</td>
                 <td>
-                    <asp:DropDownList ID="ddlProvincia" runat="server" Enabled="false"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlProvincia" runat="server" Enabled="false" AutoPostBack="true"
+                        OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged"></asp:DropDownList>
                 </td>
                 <td>Distrito</td>
                 <td>
                     <asp:DropDownList ID="ddlDistrito" runat="server" Enabled="false"></asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
+                <td>Ciudad</td>
+                <td colspan="3">
+                    <asp:TextBox ID="txtCiudad" runat="server"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td>Direccion</td>
+                <td colspan="3">
+                    <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>

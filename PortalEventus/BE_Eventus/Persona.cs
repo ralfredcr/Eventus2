@@ -9,23 +9,35 @@ namespace BE_Eventus
     public class Persona
     {
         public String nombrePersona { get; set; }
-        public String apePersona { get; set; }
+        public String apePaterno { get; set; }
+        public String apeMaterno { get; set; }
         public int sexo { get; set; }
         public String correo { get; set; }
+        public String direccion { get; set; }
+        public String ciudad { get; set; }
         public int nacionalidad { get; set; }
         public int tipoDocumento { get; set; }
         public String nroDocumento { get; set; }
         public String telefono { get; set; }
         public String celular { get; set; }
         public String fechaNacimiento { get; set; }
-        public int pais { get; set; }
-        public int departamento { get; set; }
-        public int provincia { get; set; }
-        public int distrito { get; set; }
+        public int idubigeo { get; set; }
+        public String pais { get; set; }
+        public String codDepartamento { get; set; }
+        public String codProvincia { get; set; }
+        public String codDistrito { get; set; }
+        public String nombreUsuario { get; set; }
+        public String contrasena { get; set; }
     }
-    public class Ususario
+    public class Usuario
     {
         public String nombreUsuario { get; set; }
         public String contrasena { get; set; }
+    }
+
+    public class TipoDocumento
+    {
+        public int codiDocumento { get; set; }
+        public String descripcion { get; set; }
     }
 }
