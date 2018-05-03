@@ -29,6 +29,7 @@ namespace PortalEventus.Evento
 
         CategoriaBL iCategoria = new CategoriaBL();
         EventoBL iEvento = new EventoBL();
+        ZonaEventoBL iZonaEvento = new ZonaEventoBL();
 
         static byte[] bytesGlob;
 
@@ -39,6 +40,7 @@ namespace PortalEventus.Evento
             {
                 CargarCategoria();
                 CargarEvento();
+                CargarZona();
             }
         }
 
@@ -100,6 +102,7 @@ namespace PortalEventus.Evento
             {
                 CargarCategoria();
                 CargarEvento();
+                CargarZona();
             }
         }
 
@@ -139,6 +142,32 @@ namespace PortalEventus.Evento
             }
             
         }
+
+        public void CargarZona()
+        {
+            List<ZonaEventoBE> lista = new List<ZonaEventoBE>();
+
+            lista = iZonaEvento.ObtenerEventoZona(1);
+
+            if (lista.Count < 5)
+            {
+
+                for (int i = lista.Count; i < 5; i++)
+                {
+                    ZonaEventoBE obj = new ZonaEventoBE();
+                    obj.num = i + 1;
+                    lista.Add(obj);
+                }
+            }
+
+
+            gZona.DataSource = lista;
+            gZona.DataBind();
+
+
+
+        }
+
 
     }
 }

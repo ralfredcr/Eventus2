@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="RegistrarEvento.aspx.cs" Inherits="PortalEventus.Evento.RegistrarEvento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-  
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
 
@@ -85,7 +84,7 @@
                         <asp:BoundField DataField="num" HeaderText="Nro" />
                         <asp:TemplateField HeaderText="Zona">
                             <ItemTemplate>
-                                <asp:TextBox ID="txtZona" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtZona" runat="server" AccessKey=""></asp:TextBox>                             
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">
@@ -97,6 +96,7 @@
                             <ItemTemplate>
                                 <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
                             </ItemTemplate>
+
                         </asp:TemplateField>
                     </Columns>
                     <HeaderStyle Height="20px" />

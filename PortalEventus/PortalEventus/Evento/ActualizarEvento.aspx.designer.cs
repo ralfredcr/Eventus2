@@ -85,6 +85,15 @@ namespace PortalEventus.Evento {
         protected global::System.Web.UI.WebControls.Calendar dtFechaFin;
         
         /// <summary>
+        /// Control gZona.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gZona;
+        
+        /// <summary>
         /// Control btnGrabar.
         /// </summary>
         /// <remarks>

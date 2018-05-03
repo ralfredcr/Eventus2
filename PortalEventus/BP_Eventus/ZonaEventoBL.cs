@@ -16,5 +16,15 @@ namespace BP_Eventus
         {
             return interfac.InsertEventoZona(obj);
         }
+
+        public int UpdateEventoZona(ZonaEventoBE obj)
+        {
+            return interfac.UpdateEventoZona(obj);
+        }
+
+        public List<ZonaEventoBE> ObtenerEventoZona(int eventoid)
+        {
+            return interfac.ObtenerEventoZona(eventoid);
+        }
     }
 }

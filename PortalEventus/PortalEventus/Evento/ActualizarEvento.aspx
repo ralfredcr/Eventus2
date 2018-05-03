@@ -78,6 +78,39 @@
             <td>&nbsp;</td>
         </tr>
         <tr>
+            <td>Lista Zonas</td>
+        </tr>
+        <tr>
+            <td>
+                <asp:GridView ID="gZona" runat="server" AutoGenerateColumns="False">
+                    <Columns>
+                        <asp:BoundField DataField="num" HeaderText="Nro" />
+                        <asp:TemplateField HeaderText="Zona">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtZona" runat="server" AccessKey=""></asp:TextBox>                             
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Precio">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
+                            </ItemTemplate>
+                        </asp:TemplateField>
+                        <asp:TemplateField HeaderText="Cantidad Maximo">
+                            <ItemTemplate>
+                                <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
+                            </ItemTemplate>
+
+                        </asp:TemplateField>
+                    </Columns>
+                    <HeaderStyle Height="20px" />
+                </asp:GridView>
+
+            </td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
             <td>
                 <asp:Button ID="btnGrabar" runat="server" Text="Grabar" Width="300" OnClick="btnGrabar_Click" />
                 <asp:Button ID="btnSalir" runat="server" Text="Salir" Width="300" />
