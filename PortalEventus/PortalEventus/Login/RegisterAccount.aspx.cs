@@ -184,18 +184,15 @@ namespace PortalEventus.Registro
         }
         protected void rbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //ddlDepartamento.Enabled = ddlProvincia.Enabled = ddlDistrito.Enabled = rbNacionalidad.SelectedItem.Value == "1" ? true : false;
             trDepartamento.Visible = trProvincia.Visible = rbNacionalidad.SelectedItem.Value == "1" ? true : false;
             if (rbNacionalidad.SelectedItem.Value.ToString() == "1")
             {
                 ddlPais.SelectedValue = "9589";
-                //ddlPais.Enabled = false;
                 trPais.Visible = false;
             }
             else
             {
                 trPais.Visible = true;
-                //ddlPais.Enabled = true;
             }            
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
