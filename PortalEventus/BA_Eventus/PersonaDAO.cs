@@ -246,22 +246,100 @@ namespace BA_Eventus
         {
             try
             {
+                Boolean resultado = false;
                 using (SqlConnection connection = new SqlConnection(cadena))
                 {
                     connection.Open();
-                    using (SqlCommand cmd = new SqlCommand("validarUsuario", connection))
+                    using (SqlCommand cmd = new SqlCommand("up_validarUsuario", connection))
                     {
                         cmd.Parameters.AddWithValue("@nomUsuario", usuario);
                         cmd.CommandType = CommandType.StoredProcedure;
-                        cmd.ExecuteNonQuery();
+                        resultado = (Boolean)cmd.ExecuteScalar();
                         connection.Close();
-                        return true;
+                        return resultado;
                     }
                 }
             }
             catch (Exception ex)
             {
-                return false;
+                throw;
+            }
+        }
+        public Boolean documentoExisteValidar(String documento)
+        {
+            try
+            {
+                Boolean resultado = false;
+                using (SqlConnection connection = new SqlConnection(cadena))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("up_documentoExisteValidar", connection))
+                    {
+                        cmd.Parameters.AddWithValue("@nroDocumento", documento);
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        resultado = (Boolean)cmd.ExecuteScalar();
+                        connection.Close();
+                        return resultado;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+        public List<Persona> usuarioConsultar(String usuario)
+        {
+            try
+            {
+                List<Persona> lista = new List<Persona>();
+                using (SqlConnection cone = new SqlConnection(cadena))
+                {
+                    cone.Open();
+                    using (SqlCommand cmd = new SqlCommand("up_usuarioConsultar", cone))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                            {
+                                while (dr.Read())
+                                {
+                                    Persona obj = new Persona();
+                                    obj.nombreUsuario = dr.GetString(0);
+                                    obj.nombrePersona = dr.GetString(1);
+                                    obj.apePaterno = dr.GetString(2);
+                                    obj.apeMaterno = dr.GetString(3);
+                                    obj.contrasena = dr.GetString(4);
+                                    obj.correo = dr.GetString(5);
+                                    obj.sexo = dr.GetInt16(6);
+                                    obj.nacionalidad = dr.GetInt16(7);
+                                    obj.tipoDocumento = dr.GetInt16(8);
+                                    obj.nroDocumento = dr.GetString(9);
+                                    obj.telefono = dr.GetString(10);
+                                    obj.celular = dr.GetString(11);
+                                    obj.fechaNacimiento = dr.GetString(12);
+                                    obj.pais = dr.GetString(13);
+                                    obj.codDepartamento = dr.GetString(14);
+                                    obj.codProvincia = dr.GetString(15);
+                                    obj.codDepartamento = dr.GetString(16);
+                                    obj.ciudad = dr.GetString(17);
+                                    obj.direccion = dr.GetString(18);
+                                    lista.Add(obj);
+                                }
+                            }
+                            dr.Dispose();
+                        }
+                    }
+                    cone.Close();
+                    return lista;
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
             }
         }
     }
