@@ -31,9 +31,15 @@
                 <td>
                     <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
                 </td>
-                <td>Contrase;a</td>
+            </tr>
+            <tr>
+                <td>Ingrese Contrase;a</td>
                 <td>
                     <asp:TextBox ID="txtContrasena" runat="server"></asp:TextBox>
+                </td>
+                <td>Confirmar contrase;a</td>
+                <td>
+                    <asp:TextBox ID="txtContrasena2" runat="server"></asp:TextBox>
                 </td>
             </tr>
             <tr>
@@ -89,27 +95,29 @@
                     <asp:TextBox ID="txtFechaNacimiento" runat="server"></asp:TextBox>
                 </td>
             </tr>
-            <tr>
+            <tr id="trPais" runat="server">
                 <td>Pais</td>
-                <td>
+                <td colspan="3">
                     <asp:DropDownList ID="ddlPais" runat="server" AutoPostBack="true"
                         OnSelectedIndexChanged="ddlPais_SelectedIndexChanged"></asp:DropDownList>
                 </td>
+            </tr>
+            <tr id="trDepartamento" runat="server">
                 <td>Departamento</td>
                 <td>
-                    <asp:DropDownList ID="ddlDepartamento" runat="server" Enabled="false" AutoPostBack="true"
+                    <asp:DropDownList ID="ddlDepartamento" runat="server" AutoPostBack="true"
                         OnSelectedIndexChanged="ddlDepartamento_SelectedIndexChanged"></asp:DropDownList>
                 </td>
             </tr>
-            <tr>
+            <tr id="trProvincia" runat="server">
                 <td>Provincia</td>
                 <td>
-                    <asp:DropDownList ID="ddlProvincia" runat="server" Enabled="false" AutoPostBack="true"
+                    <asp:DropDownList ID="ddlProvincia" runat="server"  AutoPostBack="true"
                         OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged"></asp:DropDownList>
                 </td>
                 <td>Distrito</td>
                 <td>
-                    <asp:DropDownList ID="ddlDistrito" runat="server" Enabled="false"></asp:DropDownList>
+                    <asp:DropDownList ID="ddlDistrito" runat="server"></asp:DropDownList>
                 </td>
             </tr>
             <tr>

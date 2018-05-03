@@ -15,7 +15,8 @@ namespace PortalEventus.Registro
         {
             if (!Page.IsPostBack)
             {
-                //this.tipoDocumentoListar();
+                //this.tipoDocumentoListar();   
+                trPais.Visible = trDepartamento.Visible = trProvincia.Visible = false;
                 this.paisListar();
                 this.departamentoListar();
                 this.provinciaListar(ddlDepartamento.SelectedValue.ToString());
@@ -160,6 +161,11 @@ namespace PortalEventus.Registro
                 return false;
             }
         }
+
+        private Boolean contrasenaValidar()
+        {
+            return txtContrasena.Text == txtContrasena2.Text ? true : false;
+        }
         #endregion
 
         protected void ddlDepartamento_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,28 +184,38 @@ namespace PortalEventus.Registro
         }
         protected void rbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ddlDepartamento.Enabled = ddlProvincia.Enabled = ddlDistrito.Enabled = rbNacionalidad.SelectedItem.Value == "1" ? true : false;
+            //ddlDepartamento.Enabled = ddlProvincia.Enabled = ddlDistrito.Enabled = rbNacionalidad.SelectedItem.Value == "1" ? true : false;
+            trDepartamento.Visible = trProvincia.Visible = rbNacionalidad.SelectedItem.Value == "1" ? true : false;
             if (rbNacionalidad.SelectedItem.Value.ToString() == "1")
             {
                 ddlPais.SelectedValue = "9589";
-                ddlPais.Enabled = false;
+                //ddlPais.Enabled = false;
+                trPais.Visible = false;
             }
             else
             {
-                ddlPais.Enabled = true;
+                trPais.Visible = true;
+                //ddlPais.Enabled = true;
             }            
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (this.usuarioRegistrar())
+                if (contrasenaValidar())
                 {
-                    this.mensajeMostrar("Enviamos un codigo de validacion a tu correo electronico, ingresalo para activar tu cuenta.");
+                    if (this.usuarioRegistrar())
+                    {
+                        this.mensajeMostrar("Enviamos un codigo de validacion a tu correo electronico, ingresalo para activar tu cuenta.");
+                    }
+                    else
+                    {
+                        this.mensajeMostrar("Error");
+                    }
                 }
                 else
                 {
-                    this.mensajeMostrar("Error");
+                    this.mensajeMostrar("Las contrase;as no coinciden");
                 }
             }
             catch (Exception ex)
