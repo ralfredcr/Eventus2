@@ -67,6 +67,15 @@ namespace PortalEventus.Registro {
         protected global::System.Web.UI.WebControls.TextBox txtContrasena;
         
         /// <summary>
+        /// txtContrasena2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtContrasena2;
+        
+        /// <summary>
         /// txtCorreo control.
         /// </summary>
         /// <remarks>
@@ -139,6 +148,15 @@ namespace PortalEventus.Registro {
         protected global::System.Web.UI.WebControls.TextBox txtFechaNacimiento;
         
         /// <summary>
+        /// trPais control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trPais;
+        
+        /// <summary>
         /// ddlPais control.
         /// </summary>
         /// <remarks>
@@ -148,6 +166,15 @@ namespace PortalEventus.Registro {
         protected global::System.Web.UI.WebControls.DropDownList ddlPais;
         
         /// <summary>
+        /// trDepartamento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trDepartamento;
+        
+        /// <summary>
         /// ddlDepartamento control.
         /// </summary>
         /// <remarks>
@@ -155,6 +182,15 @@ namespace PortalEventus.Registro {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlDepartamento;
+        
+        /// <summary>
+        /// trProvincia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlTableRow trProvincia;
         
         /// <summary>
         /// ddlProvincia control.
