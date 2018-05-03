@@ -87,17 +87,17 @@
                         <asp:BoundField DataField="num" HeaderText="Nro" />
                         <asp:TemplateField HeaderText="Zona">
                             <ItemTemplate>
-                                <asp:TextBox ID="txtZona" runat="server" AccessKey=""></asp:TextBox>                             
+                                <asp:TextBox ID="txtZona" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"zona")  %>'></asp:TextBox>                             
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">
                             <ItemTemplate>
-                                <asp:TextBox ID="txtPrecio" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtPrecio" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"precio") %>'></asp:TextBox>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Cantidad Maximo">
                             <ItemTemplate>
-                                <asp:TextBox ID="txtCantidad" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtCantidad" runat="server" Text='<%# Eval("cantidadMax") %>'></asp:TextBox>
                             </ItemTemplate>
 
                         </asp:TemplateField>

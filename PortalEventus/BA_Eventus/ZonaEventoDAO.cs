@@ -80,6 +80,37 @@ namespace BA_Eventus
 
         }
 
+        public int DeleteEventoZona(int eventoid)
+        {
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(cadena))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("pr_DeleteEventoZona", connection))
+                    {
+                        cmd.Parameters.AddWithValue("@eventoid", eventoid);
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+
+                        return 1;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return 0;
+            }
+
+        }
+
+
         public List<ZonaEventoBE> ObtenerEventoZona(int eventoid)
         {
             try

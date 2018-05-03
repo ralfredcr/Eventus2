@@ -26,5 +26,10 @@ namespace BP_Eventus
         {
             return interfac.ObtenerEventoZona(eventoid);
         }
+
+        public int DeleteEventoZona(int eventoid)
+        {
+            return interfac.DeleteEventoZona(eventoid);
+        }
     }
 }

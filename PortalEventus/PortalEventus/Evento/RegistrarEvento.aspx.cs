@@ -79,14 +79,13 @@ namespace PortalEventus.Evento
                     TextBox vprecio = (TextBox)row.FindControl("txtPrecio");
                     TextBox vcantidad = (TextBox)row.FindControl("txtCantidad");
 
-                    if (vzona.Text != "" || vprecio.Text != "" || vcantidad.Text != "")
+                    if (vzona.Text != "" && vprecio.Text != "" && vcantidad.Text != "")
                     {
                         ZonaEventoBE obj2 = new ZonaEventoBE();
                         obj2.eventoid = resultado;
                         obj2.zona = vzona.Text;
                         obj2.precio = Convert.ToDecimal(vprecio.Text);
                         obj2.cantidadMax = Convert.ToInt32(vcantidad.Text);
-
 
                         iZonaEvento.InsertEventoZona(obj2);
                     }

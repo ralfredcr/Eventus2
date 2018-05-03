@@ -98,8 +98,30 @@ namespace PortalEventus.Evento
             int resultado;
             resultado = iEvento.UpdateEvento(obj);
 
+
             if (resultado == 1)
             {
+                iZonaEvento.DeleteEventoZona(1);
+
+                foreach (GridViewRow row in gZona.Rows)
+                {
+                    TextBox vzona = (TextBox)row.FindControl("txtZona");
+                    TextBox vprecio = (TextBox)row.FindControl("txtPrecio");
+                    TextBox vcantidad = (TextBox)row.FindControl("txtCantidad");
+
+                    if (vzona.Text != "" || vprecio.Text != "" || vcantidad.Text != "")
+                    {
+                        ZonaEventoBE obj2 = new ZonaEventoBE();
+                        obj2.eventoid = resultado;
+                        obj2.zona = vzona.Text;
+                        obj2.precio = Convert.ToDecimal(vprecio.Text);
+                        obj2.cantidadMax = Convert.ToInt32(vcantidad.Text);
+
+                        iZonaEvento.UpdateEventoZona(obj2);
+                    }
+
+                }
+
                 CargarCategoria();
                 CargarEvento();
                 CargarZona();
@@ -159,7 +181,6 @@ namespace PortalEventus.Evento
                     lista.Add(obj);
                 }
             }
-
 
             gZona.DataSource = lista;
             gZona.DataBind();
