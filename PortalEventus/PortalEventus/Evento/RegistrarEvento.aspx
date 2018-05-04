@@ -58,8 +58,8 @@
         </tr>
         <tr>
             <td>
-                <asp:Calendar ID="dtFechaInicio" runat="server"></asp:Calendar>
-                <asp:TextBox ID="txtFechaInicio" runat="server" placeholder="Date/Month/Year" />
+                <asp:TextBox ID="txtFechaInicio" runat="server"  TextMode="DateTimeLocal" />
+
             </td>
         </tr>
         <tr>
@@ -67,8 +67,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Calendar ID="dtFechaFin" runat="server"></asp:Calendar>
-                <asp:TextBox ID="txtFechaFin" runat="server" placeholder="Date/Month/Year" />
+                <asp:TextBox ID="txtFechaFin" runat="server" TextMode="DateTimeLocal" />
             </td>
         </tr>
         <tr>
@@ -84,7 +83,7 @@
                         <asp:BoundField DataField="num" HeaderText="Nro" />
                         <asp:TemplateField HeaderText="Zona">
                             <ItemTemplate>
-                                <asp:TextBox ID="txtZona" runat="server" AccessKey=""></asp:TextBox>                             
+                                <asp:TextBox ID="txtZona" runat="server" AccessKey=""></asp:TextBox>
                             </ItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Precio">

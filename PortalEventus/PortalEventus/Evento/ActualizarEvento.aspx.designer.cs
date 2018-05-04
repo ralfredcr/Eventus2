@@ -67,22 +67,22 @@ namespace PortalEventus.Evento {
         protected global::System.Web.UI.WebControls.Image Image1;
         
         /// <summary>
-        /// Control dtFechaInicio.
+        /// Control txtFechaInicio.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dtFechaInicio;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaInicio;
         
         /// <summary>
-        /// Control dtFechaFin.
+        /// Control txtFechaFin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar dtFechaFin;
+        protected global::System.Web.UI.WebControls.TextBox txtFechaFin;
         
         /// <summary>
         /// Control gZona.

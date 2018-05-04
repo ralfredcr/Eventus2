@@ -62,8 +62,8 @@ namespace PortalEventus.Evento
             obj.descripcionAdicional = txtDescripcionAdicional.Text;
             obj.categoriaid = Convert.ToInt32(string.IsNullOrEmpty(cboCategoria.SelectedValue) ? "-1" : cboCategoria.SelectedValue);
             obj.RutaImagen = bytes;
-            obj.fechaInicio = dtFechaInicio.SelectedDate;
-            obj.fechaFin = dtFechaFin.SelectedDate;
+            obj.fechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
+            obj.fechaFin = Convert.ToDateTime(txtFechaFin.Text);
             obj.estado = 1;
             obj.usuarioCreacion = -1;
             obj.usuarioActualiza = -1;

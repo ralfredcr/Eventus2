@@ -2,6 +2,7 @@
 using BP_Eventus;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -89,8 +90,8 @@ namespace PortalEventus.Evento
                 obj.RutaImagen = bytesGlob;
             }
             
-            obj.fechaInicio = dtFechaInicio.SelectedDate;
-            obj.fechaFin = dtFechaFin.SelectedDate;
+            obj.fechaInicio = Convert.ToDateTime(txtFechaInicio.Text);
+            obj.fechaFin = Convert.ToDateTime(txtFechaFin.Text);
             obj.estado = 1;
             obj.usuarioCreacion = -1;
             obj.usuarioActualiza = -1;
@@ -109,7 +110,7 @@ namespace PortalEventus.Evento
                     TextBox vprecio = (TextBox)row.FindControl("txtPrecio");
                     TextBox vcantidad = (TextBox)row.FindControl("txtCantidad");
 
-                    if (vzona.Text != "" || vprecio.Text != "" || vcantidad.Text != "")
+                    if (vzona.Text != "" && vprecio.Text != "" && vcantidad.Text != "")
                     {
                         ZonaEventoBE obj2 = new ZonaEventoBE();
                         obj2.eventoid = resultado;
@@ -151,8 +152,8 @@ namespace PortalEventus.Evento
             txtDescripcion.Text = obj.descripcionEvento;
             txtDescripcionAdicional.Text = obj.descripcionAdicional;
             cboCategoria.SelectedValue = obj.categoriaid.ToString();
-            dtFechaInicio.SelectedDate = obj.fechaInicio;
-            dtFechaFin.SelectedDate = obj.fechaFin;
+            txtFechaInicio.Text = obj.fechaInicio.ToString("yyyy-MM-ddTHH:mm");
+            txtFechaFin.Text = obj.fechaFin.ToString("yyyy-MM-ddTHH:mm");
 
             if (obj.RutaImagen != null)
             {

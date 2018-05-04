@@ -63,7 +63,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Calendar ID="dtFechaInicio" runat="server"></asp:Calendar>
+                <asp:TextBox ID="txtFechaInicio" runat="server"  TextMode="DateTimeLocal" />
             </td>
         </tr>
         <tr>
@@ -71,7 +71,7 @@
         </tr>
         <tr>
             <td>
-                <asp:Calendar ID="dtFechaFin" runat="server"></asp:Calendar>
+                <asp:TextBox ID="txtFechaFin" runat="server" TextMode="DateTimeLocal" />
             </td>
         </tr>
         <tr>

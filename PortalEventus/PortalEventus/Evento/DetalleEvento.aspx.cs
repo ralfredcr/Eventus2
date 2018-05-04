@@ -44,8 +44,8 @@ namespace PortalEventus.Evento
             txtTitulo.Text = obj.titulo;
             txtDescripcion.Text = obj.descripcionEvento;
             txtCategoria.Text = obj.descripcionCateg;
-            dtFechaInicio.SelectedDate = obj.fechaInicio;
-            dtFechaFin.SelectedDate = obj.fechaFin;
+            txtFechaInicio.Text = obj.fechaInicio.ToString("yyyy-MM-ddTHH:mm");
+            txtFechaFin.Text = obj.fechaFin.ToString("yyyy-MM-ddTHH:mm");
 
             if (obj.RutaImagen != null)
             {
