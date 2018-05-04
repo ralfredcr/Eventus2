@@ -43,7 +43,6 @@ namespace PortalEventus.Evento
 
             txtTitulo.Text = obj.titulo;
             txtDescripcion.Text = obj.descripcionEvento;
-            txtDescripcionAdicional.Text = obj.descripcionAdicional;
             txtCategoria.Text = obj.descripcionCateg;
             dtFechaInicio.SelectedDate = obj.fechaInicio;
             dtFechaFin.SelectedDate = obj.fechaFin;
@@ -56,6 +55,11 @@ namespace PortalEventus.Evento
 
             }
 
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
         }
     }
 }

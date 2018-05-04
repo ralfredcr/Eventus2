@@ -26,14 +26,6 @@
             </td>
         </tr>
         <tr>
-            <td style="color: blue; font-size: 18px">Descripción Adicional:</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="txtDescripcionAdicional" runat="server" Width="650px" Enabled="false"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
             <td style="color: blue; font-size: 18px">Categoria:</td>
         </tr>
         <tr>
@@ -75,11 +67,14 @@
             </td>
         </tr>
         <tr>
-            <td>&nbsp;</td>
+            <td>
+               &nbsp;
+            </td>
         </tr>
         <tr>
             <td>
-                <asp:Button ID="btnSalir" runat="server" Text="Salir" Width="300" />
+                 <asp:Button ID="btnReservar" runat="server" Text="Reservar Evento" Width="300" />
+                <asp:Button ID="btnSalir" runat="server" Text="Regresar" Width="300" OnClick="btnSalir_Click" />
             </td>
         </tr>
     </table>

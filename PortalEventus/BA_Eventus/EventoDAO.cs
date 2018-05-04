@@ -98,7 +98,7 @@ namespace BA_Eventus
 
         }
 
-        public List<EventoBE> LstEvento(string descripcion)
+        public List<EventoBE> LstEvento(string descripcion,string descripcionAdicional, int categoriaid, DateTime fechaInicio)
         {
             try
             {
@@ -110,7 +110,10 @@ namespace BA_Eventus
                     connection.Open();
                     using (SqlCommand cmd = new SqlCommand("pr_LstEvento", connection))
                     {
-                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;                   
+                        cmd.Parameters.Add("@descripcion", SqlDbType.VarChar).Value = descripcion;
+                        cmd.Parameters.Add("@descripcionAdicional", SqlDbType.VarChar).Value = descripcionAdicional;
+                        cmd.Parameters.Add("@categoriaid", SqlDbType.Int).Value = categoriaid;
+                        cmd.Parameters.Add("@fechaInicio", SqlDbType.VarChar).Value = fechaInicio;
                         cmd.CommandType = CommandType.StoredProcedure;
                         using (SqlDataReader dr = cmd.ExecuteReader())
                         {

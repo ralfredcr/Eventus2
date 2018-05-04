@@ -22,9 +22,9 @@ namespace BP_Eventus
             return interfac.UpdateEvento(obj);
         }
 
-        public List<EventoBE> LstEvento(string descripcion)
+        public List<EventoBE> LstEvento(string descripcion, string descripcionAdicional, int categoriaid, DateTime fechaInicio)
         {
-            return interfac.LstEvento(descripcion);
+            return interfac.LstEvento(descripcion, descripcionAdicional, categoriaid, fechaInicio);
         }
 
         public EventoBE ObtenerEvento(int eventoid)

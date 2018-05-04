@@ -9,7 +9,7 @@
             <td colspan="2">Listar Evento</td>
         </tr>
         <tr>
-            <td >Descripción:</td>
+            <td>Descripción:</td>
             <td>Categoria;</td>
         </tr>
         <tr>
@@ -17,8 +17,18 @@
                 <asp:TextBox ID="txtDescripcion" runat="server" Width="396px"></asp:TextBox>
             </td>
             <td>
-                <asp:DropDownList ID="DropDownList1" runat="server" Width="234px"></asp:DropDownList>
+                <asp:DropDownList ID="cboCategoria" runat="server" Width="234px"></asp:DropDownList>
             </td>
+        </tr>
+        <tr>
+            <td>Fecha Inicio:</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>
+
+            </td>
+            <td></td>
         </tr>
         <tr>
             <td colspan="2">

@@ -26,7 +26,7 @@
             </td>
         </tr>
         <tr>
-            <td style="color: blue; font-size: 18px">Descripción Adicional:</td>
+            <td style="color: blue; font-size: 18px">Palabras claves:</td>
         </tr>
         <tr>
             <td>

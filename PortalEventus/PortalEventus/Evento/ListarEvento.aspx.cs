@@ -11,13 +11,13 @@ namespace PortalEventus.Evento
 {
     public partial class ListarEvento : System.Web.UI.Page
     {
-        public string descripcion
+        public string descripcionAdicional
         {
             get
             {
-                if (!string.IsNullOrEmpty(Request.QueryString["descripcion"]))
+                if (!string.IsNullOrEmpty(Request.QueryString["descripcionAdicional"]))
                 {
-                    return Request.QueryString["descripcion"].ToString();
+                    return Request.QueryString["descripcionAdicional"].ToString();
                 }
                 else
                 {
@@ -27,12 +27,14 @@ namespace PortalEventus.Evento
         }
 
         EventoBL iEvento = new EventoBL();
+        CategoriaBL iCategoria = new CategoriaBL();
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 CargarEventos();
+                CargarCategoria();
             }
         }
 
@@ -41,9 +43,23 @@ namespace PortalEventus.Evento
             
             List<EventoBE> lista = new List<EventoBE>();
 
-            lista = iEvento.LstEvento(descripcion);
+            lista = iEvento.LstEvento("", descripcionAdicional,-1, Convert.ToDateTime("10/10/1900"));
             gEvento.DataSource = lista;
             gEvento.DataBind();
+        }
+
+        public void CargarCategoria()
+        {
+            List<CategoriaBE> lista = new List<CategoriaBE>();
+
+            lista = iCategoria.LstCategoria();
+
+            this.cboCategoria.DataSource = lista;
+            this.cboCategoria.DataTextField = "descripcion";
+            this.cboCategoria.DataValueField = "categoriaid";
+            this.cboCategoria.DataBind();
+            this.cboCategoria.Items.Insert(0, new ListItem("Seleccionar", "-1"));
+            this.cboCategoria.SelectedIndex = 0;
         }
 
     }
