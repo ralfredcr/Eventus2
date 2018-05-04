@@ -1,147 +1,140 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="RegisterAccount.aspx.cs" Inherits="PortalEventus.Registro.RegisterAccount" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <div style="position: absolute; left: 10%; top: 20%" id="capa1">
-        <form id="form" runat="server">
-            <table>
-                <tr>
-                    <td>Nombres</td>
-                    <td colspan="3">
-                        <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Apellido Paterno</td>
-                    <td>
-                        <asp:TextBox ID="txtApeparterno" runat="server"></asp:TextBox>
-                    </td>
-                    <td>Apellido Materno</td>
-                    <td>
-                        <asp:TextBox ID="txtApeMaterno" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Usuario</td>
-                    <td>
-                        <asp:TextBox ID="txtUsuario" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Ingrese Contraseña</td>
-                    <td>
-                        <asp:TextBox ID="txtContrasena" runat="server"></asp:TextBox>
-                    </td>
-                    <td>Confirmar contraseña</td>
-                    <td>
-                        <asp:TextBox ID="txtContrasena2" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Correo</td>
-                    <td colspan="3">
-                        <asp:TextBox ID="txtCorreo" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Sexo</td>
-                    <td>
-                        <asp:RadioButtonList ID="rbSexo" runat="server">
-                            <asp:ListItem Value="1" Text="Masculino"></asp:ListItem>
-                            <asp:ListItem Value="2" Text="Femenino"></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </td>
-                    <td>Nacionalidad</td>
-                    <td>
-                        <asp:RadioButtonList ID="rbNacionalidad" runat="server" AutoPostBack="false"
-                            OnSelectedIndexChanged="rbNacionalidad_SelectedIndexChanged">
-                            <asp:ListItem Value="1" Text="Peruana"></asp:ListItem>
-                            <asp:ListItem Value="2" Text="Extranjera"></asp:ListItem>
-                        </asp:RadioButtonList>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Tipo documento</td>
-                    <td>
-                        <asp:DropDownList ID="ddlTipoDocumento" runat="server">
-                            <asp:ListItem Value="1" Text="DNI"></asp:ListItem>
-                            <asp:ListItem Value="2" Text="Carnet Extranjeria"></asp:ListItem>
-                            <asp:ListItem Value="2" Text="Pasaporte"></asp:ListItem>
-                        </asp:DropDownList>
-                    </td>
-                    <td>Nro. documento</td>
-                    <td>
-                        <asp:TextBox ID="txtNumeroDoc" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <%--          <tr>
-                <td>Telefono</td>
-                <td>
-                    <asp:TextBox ID="txtTelefono" runat="server"></asp:TextBox>
-                </td>
-                <td>Celular</td>
-                <td>
-                    <asp:TextBox ID="txtCelular" runat="server"></asp:TextBox>
-                </td>
-            </tr>--%>
-                <tr>
-                    <td>Fecha nacimiento</td>
-                    <td>
-                        <asp:TextBox ID="txtFechaNacimiento" runat="server"></asp:TextBox>
-                    </td>
-                </tr>
-                <%--         <tr id="trPais" runat="server">
-                <td>Pais</td>
-                <td colspan="3">
-                    <asp:DropDownList ID="ddlPais" runat="server" AutoPostBack="true"
-                        OnSelectedIndexChanged="ddlPais_SelectedIndexChanged"></asp:DropDownList>
-                </td>
-            </tr>
-            <tr id="trDepartamento" runat="server">
-                <td>Departamento</td>
-                <td>
-                    <asp:DropDownList ID="ddlDepartamento" runat="server" AutoPostBack="true"
-                        OnSelectedIndexChanged="ddlDepartamento_SelectedIndexChanged"></asp:DropDownList>
-                </td>
-            </tr>
-            <tr id="trProvincia" runat="server">
-                <td>Provincia</td>
-                <td>
-                    <asp:DropDownList ID="ddlProvincia" runat="server"  AutoPostBack="true"
-                        OnSelectedIndexChanged="ddlProvincia_SelectedIndexChanged"></asp:DropDownList>
-                </td>
-                <td>Distrito</td>
-                <td>
-                    <asp:DropDownList ID="ddlDistrito" runat="server"></asp:DropDownList>
-                </td>
-            </tr>
-            <tr>
-                <td>Ciudad</td>
-                <td colspan="3">
-                    <asp:TextBox ID="txtCiudad" runat="server"></asp:TextBox>
-                </td>
-            </tr>
-            <tr>
-                <td>Direccion</td>
-                <td colspan="3">
-                    <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
-                </td>
-            </tr>--%>
-                <tr>
-                    <td colspan="2">
-                        <asp:Button ID="btnRegistrar" runat="server" Text="Registrar" OnClick="btnRegistrar_Click" />
-                    </td>
-                    <td colspan="2">
-                        <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" />
-                    </td>
-                </tr>
-            </table>
-        </form>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Login/Security.Master" AutoEventWireup="true" CodeBehind="RegisterAccount.aspx.cs" Inherits="PortalEventus.Registro.RegisterAccount" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="bodylogin" runat="server">
+    <div id="boxregister" class="container-fluid">
+        <div class="container bkbox">
+            <div class="lbox">
+                <div class="ibox">
+                    <div class="imgbox">
+                        <img src="../Assets/img/eventus.png" />
+                    </div>
+                    <div>
+                        <h6>Bienvenido</h6>
+                        <span>Registrate y se parte de la comunidad de Eventus.</span>
+                    </div>
+                </div>
+                <div class="formbox">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2">Usuario</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2">Email</div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtUsuario" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtCorreo" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2">Contraseña</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2">Confirmar Contraseña</div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtContrasena" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtContrasena2" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 linetopbox"></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2">Nombres</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2">Sexo</div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtNombre" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                            <asp:RadioButtonList ID="rbSexo" CssClass="form-check-input ml-1" runat="server" RepeatDirection="Horizontal">
+                                <asp:ListItem Value="1" Text="Masculino"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="Femenino"></asp:ListItem>
+                            </asp:RadioButtonList>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2">Apellido Paterno</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2">Apellido Materno</div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtApeparterno" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtApeMaterno" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2">Tipo Documento</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2">Número Documento</div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4">
+                            <asp:DropDownList ID="ddlTipoDocumento" CssClass="form-control form-control-sm" runat="server">
+                                <asp:ListItem Value="1" Text="DNI"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="Carnet Extranjeria"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="Pasaporte"></asp:ListItem>
+                            </asp:DropDownList>
+                        </div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtNumeroDoc" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2">Fecha Nacimiento</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2">Nacionalidad</div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtFechaNacimiento" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4">
+                            <asp:RadioButtonList ID="rbNacionalidad" CssClass="form-check-input ml-1" runat="server" RepeatDirection="Horizontal" AutoPostBack="false" OnSelectedIndexChanged="rbNacionalidad_SelectedIndexChanged">
+                                <asp:ListItem Value="1" Text="Peruana"></asp:ListItem>
+                                <asp:ListItem Value="2" Text="Extranjera"></asp:ListItem>
+                            </asp:RadioButtonList>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+                <div class="btnbox">                    
+                    <div class="row pt-3">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row pb-5">
+                <div class="col-md-4"></div>
+                <div class="col-md-2"><asp:Button ID="btnRegistrar" runat="server" CssClass="form-control btn-info" Text="Registrar" OnClick="btnRegistrar_Click" /></div>
+                <div class="col-md-2"><asp:Button ID="btnCancelar" runat="server" CssClass="form-control btn-light" Text="Cancelar" /></div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
     </div>
-</body>
-</html>
+</asp:Content>
