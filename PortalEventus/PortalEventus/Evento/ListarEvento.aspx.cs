@@ -62,5 +62,29 @@ namespace PortalEventus.Evento
             this.cboCategoria.SelectedIndex = 0;
         }
 
+        protected void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<EventoBE> lista = new List<EventoBE>();
+            DateTime fecha;
+
+            int categoriaid = Convert.ToInt32(string.IsNullOrEmpty(cboCategoria.SelectedValue) ? "-1" : cboCategoria.SelectedValue);
+
+            if (txtFechaInicio.Text == "")
+            {
+                 fecha = Convert.ToDateTime("10/10/1900");
+            }
+            else
+            {
+                 fecha = Convert.ToDateTime(txtFechaInicio.Text);
+
+            }
+            
+
+            lista = iEvento.LstEvento("", txtDescripcion.Text, categoriaid, fecha);
+            gEvento.DataSource = lista;
+            gEvento.DataBind();
+
+
+        }
     }
 }

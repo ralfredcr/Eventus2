@@ -26,9 +26,11 @@
         </tr>
         <tr>
             <td>
-
+                <asp:TextBox ID="txtFechaInicio" runat="server"  TextMode="DateTimeLocal" />
             </td>
-            <td></td>
+            <td>
+                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Eventos" OnClick="btnBuscar_Click" />
+            </td>
         </tr>
         <tr>
             <td colspan="2">
