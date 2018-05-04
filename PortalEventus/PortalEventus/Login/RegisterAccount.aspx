@@ -110,7 +110,7 @@
                     </div>
                     <div class="row pb-3">
                         <div class="col-md-1"></div>
-                        <div class="col-md-4"><asp:TextBox ID="txtFechaNacimiento" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtFechaNacimiento" CssClass="form-control form-control-sm" runat="server" TextMode="DateTimeLocal"></asp:TextBox></div>
                         <div class="col-md-2"></div>
                         <div class="col-md-4">
                             <asp:RadioButtonList ID="rbNacionalidad" CssClass="form-check-input ml-1" runat="server" RepeatDirection="Horizontal" AutoPostBack="false" OnSelectedIndexChanged="rbNacionalidad_SelectedIndexChanged">
