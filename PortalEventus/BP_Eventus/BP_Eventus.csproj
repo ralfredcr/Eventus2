@@ -45,6 +45,7 @@
     <Compile Include="PersonaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservaBL.cs" />
+    <Compile Include="ReservaDetalleBL.cs" />
     <Compile Include="ZonaEventoBL.cs" />
   </ItemGroup>
   <ItemGroup>

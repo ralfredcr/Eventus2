@@ -15,7 +15,7 @@ body {
     font-size: 12px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-.form-control::-webkit-input-placeholder { color: #a3a3a3; font-style: italic; font-size: 0.95rem; }  /* WebKit, Blink, Edge */
+.form-control::-webkit-input-placeholder { color: #a3a3a3; font-size: 0.95rem; font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif; }  /* WebKit, Blink, Edge */
 .form-control:-moz-placeholder { color: #a3a3a3; font-style: italic; }  /* Mozilla Firefox 4 to 18 */
 .form-control::-moz-placeholder { color: #a3a3a3; font-style: italic; } /* Mozilla Firefox 19+ */
 .form-control:-ms-input-placeholder { color: #a3a3a3; font-style: italic; }  /* Internet Explorer 10-11 */
@@ -25,11 +25,8 @@ body {
 #boxlogin div {
     display: block;
 }
-#boxlogin p {
-    font-size: 1.2rem;
-    margin-bottom: 0;
-    margin-left: 10px;
-    text-align: left;
+#boxregister div {
+    /*display: block;*/
 }
 #boxlogin div.bkbox {
     background-color: rgba(255, 255, 255, 0.3);
@@ -41,13 +38,33 @@ body {
     min-height:520px;
     box-shadow:0 2px 10px rgba(0,0,0,0.45);
 }
-#boxlogin div.lbox {
-    min-height:400px;
-    padding:20px 10px;
+#boxregister div.bkbox {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    position: relative;
     text-align: center;
-    margin-top: 100px;
+    width: 780px;
+    margin: auto;
+    min-height: 520px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+#boxlogin div.lbox {
+    min-height: 400px;
+    padding: 20px 10px;
+    text-align: center;
+    margin-top: 60px;
+}
+#boxregister div.lbox {
+    min-height: 500px;
+    padding: 20px 10px;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 60px;
 }
 #boxlogin div.ibox {
+    margin-top: 20px;
+}
+#boxregister div.ibox {
     margin-top: 20px;
 }
 #boxlogin div.imgbox {
@@ -56,10 +73,21 @@ body {
     margin:5px auto;
     padding-bottom: 70px;
 }
+#boxregister div.imgbox {
+    display: block;
+    height: 45px;
+    margin: 5px auto;
+    padding-bottom: 70px;
+}
 #boxlogin div.formbox {
     display:block;
     margin:5px auto;
     padding-top: 30px;
+}
+#boxregister div.formbox {
+    margin:5px auto;
+    padding-top: 30px;
+    text-align: initial;
 }
 #boxlogin div.btnbox {
     display:block;
@@ -74,6 +102,34 @@ body {
     letter-spacing: -1.2px;
     margin-top: 50px:
 }
+#boxregister div.ibox h6 {
+    color: #17a2b8;
+    font-size: 1.5rem;
+    letter-spacing: -1.2px;
+}
+
+#boxregister div.ibox span {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+#boxlogin p {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.linetopbox {
+    border-top: 1px solid grey;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+
+
+
 
 
 #forgetbox {
@@ -83,7 +139,6 @@ body {
     border: 0;
 }
 
-
 #newbox {
     border-top: 1px solid grey;
     display: block;
@@ -91,18 +146,9 @@ body {
     padding-top: 10px;
 }
 
-    /*div.loginbox {
-        background-color: #ffffff;
-        background-color: rgba(248, 248, 248, 0.3);
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        min-height: 420px;
-        padding-bottom: 30px;
-        padding-top: 30px;
-        text-align: center;
-    }
-    div.loginbox h1 {
-        color: #00ACED;
-        font-size: 3rem;
-        font-weight: bold;
-    }*/
+.panalert {
+    height: 100px;
+    background-color: pink;
+}
+
 /*-- End of the Body --*/

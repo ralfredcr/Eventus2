@@ -16,11 +16,11 @@ namespace PortalEventus.Registro
             if (!Page.IsPostBack)
             {
                 //this.tipoDocumentoListar();   
-                trPais.Visible = trDepartamento.Visible = trProvincia.Visible = false;
-                this.paisListar();
-                this.departamentoListar();
-                this.provinciaListar(ddlDepartamento.SelectedValue.ToString());
-                this.distritoListar(ddlDepartamento.SelectedValue.ToString(), ddlProvincia.SelectedValue.ToString());
+                //trPais.Visible = trDepartamento.Visible = trProvincia.Visible = false;
+                //this.paisListar();
+                //this.departamentoListar();
+                //this.provinciaListar(ddlDepartamento.SelectedValue.ToString());
+                //this.distritoListar(ddlDepartamento.SelectedValue.ToString(), ddlProvincia.SelectedValue.ToString());
             }
         }
 
@@ -46,76 +46,139 @@ namespace PortalEventus.Registro
                 throw;
             }
         }
-        private void paisListar()
-        {
-            PersonaBL objPersona = new PersonaBL();
-            try
-            {
-                ddlPais.DataSource = objPersona.paisListar();
-                ddlPais.DataValueField = "codigoPais";
-                ddlPais.DataTextField = "nombrePais";
-                ddlPais.DataBind();
-            }
-            catch (Exception ex)
-            {
-                this.mensajeMostrar(ex.Message.ToString());
-                throw;
-            }
-        }
-        private void departamentoListar()
-        {
-            PersonaBL objPersona = new PersonaBL();
-            try
-            {
-                ddlDepartamento.DataSource = objPersona.departamentoListar();
-                ddlDepartamento.DataValueField = "codigoDepartamento";
-                ddlDepartamento.DataTextField = "nombreDepartamento";
-                ddlDepartamento.DataBind();
-            }
-            catch (Exception ex)
-            {
-                this.mensajeMostrar(ex.Message.ToString());
-                throw;
-            }
-        }
+        //private void paisListar()
+        //{
+        //    PersonaBL objPersona = new PersonaBL();
+        //    try
+        //    {
+        //        ddlPais.DataSource = objPersona.paisListar();
+        //        ddlPais.DataValueField = "codigoPais";
+        //        ddlPais.DataTextField = "nombrePais";
+        //        ddlPais.DataBind();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        this.mensajeMostrar(ex.Message.ToString());
+        //        throw;
+        //    }
+        //}
+        //private void departamentoListar()
+        //{
+        //    PersonaBL objPersona = new PersonaBL();
+        //    try
+        //    {
+        //        ddlDepartamento.DataSource = objPersona.departamentoListar();
+        //        ddlDepartamento.DataValueField = "codigoDepartamento";
+        //        ddlDepartamento.DataTextField = "nombreDepartamento";
+        //        ddlDepartamento.DataBind();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        this.mensajeMostrar(ex.Message.ToString());
+        //        throw;
+        //    }
+        //}
 
-        private void provinciaListar(String codDepartamento)
+        //private void provinciaListar(String codDepartamento)
+        //{
+        //    PersonaBL objPersona = new PersonaBL();
+        //    try
+        //    {
+        //        ddlProvincia.DataSource = objPersona.provinciaListar(codDepartamento);
+        //        ddlProvincia.DataValueField = "codigoProvincia";
+        //        ddlProvincia.DataTextField = "nombreProvincia";
+        //        ddlProvincia.DataBind();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        this.mensajeMostrar(ex.Message.ToString());
+        //        throw;
+        //    }
+        //}
+        //private void distritoListar(String codDepartamento, String codProvincia)
+        //{
+        //    PersonaBL objPersona = new PersonaBL();
+        //    try
+        //    {
+        //        ddlDistrito.DataSource = objPersona.distritoListar(codDepartamento, codProvincia);
+        //        ddlDistrito.DataValueField = "codigoDistrito";
+        //        ddlDistrito.DataTextField = "nombreDistrito";
+        //        ddlDistrito.DataBind();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        this.mensajeMostrar(ex.Message.ToString());
+        //        throw;
+        //    }
+        //}
+        private Boolean validarCampos()
         {
-            PersonaBL objPersona = new PersonaBL();
-            try
+            Boolean resultado = false;
+            if (txtUsuario.Text.Replace(" ", "") == null || txtUsuario.Text == "")
             {
-                ddlProvincia.DataSource = objPersona.provinciaListar(codDepartamento);
-                ddlProvincia.DataValueField = "codigoProvincia";
-                ddlProvincia.DataTextField = "nombreProvincia";
-                ddlProvincia.DataBind();
+                resultado = false;
+                this.mensajeMostrar("Ingrese nombre de usuario");
             }
-            catch (Exception ex)
+            else if (txtNombre.Text.Replace(" ", "") == null || txtNombre.Text == "")
             {
-                this.mensajeMostrar(ex.Message.ToString());
-                throw;
+                resultado = false;
+                this.mensajeMostrar("Ingrese nombres.");
             }
+            else if (txtApeparterno.Text.Replace(" ", "") == null || txtApeparterno.Text == "")
+            {
+                resultado = false;
+                this.mensajeMostrar("Ingrese apellido paterno.");
+            }
+            //else if (txtApeMaterno.Text.Replace(" ", "") == null || txtApeMaterno.Text == "")
+            //{
+            //    resultado = false;
+            //    this.mensajeMostrar("Ingrese apellido materno.");
+            //}
+            else if (txtContrasena.Text.Replace(" ", "") == null || txtContrasena.Text == "")
+            {
+                resultado = false;
+                this.mensajeMostrar("Ingrese contrasena.");
+            }
+            else if (txtContrasena2.Text.Replace(" ", "") == null || txtContrasena2.Text == "")
+            {
+                resultado = false;
+                this.mensajeMostrar("Confirme la contrasdena.");
+            }
+            else if (rbSexo.SelectedIndex < 0)
+            {
+                resultado = false;
+                this.mensajeMostrar("Seleccione su sexo.");
+            }
+            else if (rbNacionalidad.SelectedIndex < 0)
+            {
+                resultado = false;
+                this.mensajeMostrar("Seleccione nacionalidad.");
+            }
+            else if (txtNumeroDoc.Text.Replace(" ", "") == null || txtNumeroDoc.Text == "")
+            {
+                resultado = false;
+                this.mensajeMostrar("Ingrese numero de documento.");
+            }
+            else if (txtFechaNacimiento.Text.Replace(" ", "") == null || txtFechaNacimiento.Text == "")
+            {
+                resultado = false;
+                this.mensajeMostrar("Ingrese fecha nacimiento.");
+            }
+            else
+            {
+                resultado = true;
+            }
+            return resultado;
         }
-        private void distritoListar(String codDepartamento, String codProvincia)
-        {
-            PersonaBL objPersona = new PersonaBL();
-            try
-            {
-                ddlDistrito.DataSource = objPersona.distritoListar(codDepartamento, codProvincia);
-                ddlDistrito.DataValueField = "codigoDistrito";
-                ddlDistrito.DataTextField = "nombreDistrito";
-                ddlDistrito.DataBind();
-            }
-            catch (Exception ex)
-            {
-                this.mensajeMostrar(ex.Message.ToString());
-                throw;
-            }
-        }
-
         private Boolean usuarioExisteValidar(String usuario)
         {
             PersonaBL objPersona = new PersonaBL();
             return objPersona.usuarioExisteValidar(usuario);
+        }
+        private Boolean documentoExisteValidar(String documento)
+        {
+            PersonaBL objPersona = new PersonaBL();
+            return objPersona.documentoExisteValidar(documento);
         }
 
         private Boolean usuarioRegistrar()
@@ -124,9 +187,14 @@ namespace PortalEventus.Registro
             {
                 Boolean resultado = false;
                 String usuario = txtUsuario.Text;
+                String documento = txtNumeroDoc.Text;
                 if (this.usuarioExisteValidar(usuario))
                 {
                     this.mensajeMostrar("Nombre de usuario no disponible");
+                }
+                else if (this.documentoExisteValidar(documento))
+                {
+                    this.mensajeMostrar("Nro. documento ya está registrado.");
                 }
                 else
                 {
@@ -140,17 +208,17 @@ namespace PortalEventus.Registro
                     obj.contrasena = txtContrasena.Text;
                     obj.nroDocumento = txtNumeroDoc.Text;
                     obj.fechaNacimiento = txtFechaNacimiento.Text;
-                    obj.telefono = txtTelefono.Text;
-                    obj.celular = txtCelular.Text;
-                    obj.direccion = txtDireccion.Text;
+                    obj.telefono = null;// txtTelefono.Text;
+                    obj.celular = null;// txtCelular.Text;
+                    obj.direccion = null;// txtDireccion.Text;
                     obj.tipoDocumento = Convert.ToInt16(ddlTipoDocumento.SelectedValue.ToString());
                     obj.sexo = Convert.ToInt16(rbSexo.SelectedItem.Value.ToString());
                     obj.nacionalidad = Convert.ToInt16(rbNacionalidad.SelectedItem.Value.ToString());
-                    obj.pais = ddlPais.Text;
-                    obj.ciudad = txtCiudad.Text;
-                    obj.codDepartamento = ddlDepartamento.SelectedValue.ToString();
-                    obj.codProvincia = ddlProvincia.SelectedValue.ToString();
-                    obj.codDistrito = ddlDistrito.SelectedValue.ToString();
+                    obj.pais = null;// ddlPais.Text;
+                    obj.ciudad = null;// txtCiudad.Text;
+                    obj.codDepartamento = null;// ddlDepartamento.SelectedValue.ToString();
+                    obj.codProvincia = null;// ddlProvincia.SelectedValue.ToString();
+                    obj.codDistrito = null;// ddlDistrito.SelectedValue.ToString();
 
                     resultado = objPersona.usuarioRegistrar(obj);
                 }
@@ -158,6 +226,7 @@ namespace PortalEventus.Registro
             }
             catch (Exception ex)
             {
+                this.mensajeMostrar(ex.Message.ToString());
                 return false;
             }
         }
@@ -170,49 +239,53 @@ namespace PortalEventus.Registro
 
         protected void ddlDepartamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String codigoDep = ddlDepartamento.SelectedValue.ToString();
-            String codigoProv = ddlProvincia.SelectedValue.ToString();
-            this.provinciaListar(codigoDep);
-            this.distritoListar(codigoDep, codigoProv);
+            //String codigoDep = ddlDepartamento.SelectedValue.ToString();
+            //String codigoProv = ddlProvincia.SelectedValue.ToString();
+            //this.provinciaListar(codigoDep);
+            //this.distritoListar(codigoDep, codigoProv);
 
         }
         protected void ddlProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
-            String codigoDep = ddlDepartamento.SelectedValue.ToString();
-            String codigoProv = ddlProvincia.SelectedValue.ToString();
-            this.distritoListar(codigoDep, codigoProv);
+            //String codigoDep = ddlDepartamento.SelectedValue.ToString();
+            //String codigoProv = ddlProvincia.SelectedValue.ToString();
+            //this.distritoListar(codigoDep, codigoProv);
         }
         protected void rbNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            trDepartamento.Visible = trProvincia.Visible = rbNacionalidad.SelectedItem.Value == "1" ? true : false;
-            if (rbNacionalidad.SelectedItem.Value.ToString() == "1")
-            {
-                ddlPais.SelectedValue = "9589";
-                trPais.Visible = false;
-            }
-            else
-            {
-                trPais.Visible = true;
-            }            
+            //trDepartamento.Visible = trProvincia.Visible = rbNacionalidad.SelectedItem.Value == "1" ? true : false;
+            //if (rbNacionalidad.SelectedItem.Value.ToString() == "1")
+            //{
+            //    ddlPais.SelectedValue = "9589";
+            //    trPais.Visible = false;
+            //}
+            //else
+            //{
+            //    trPais.Visible = true;
+            //}            
         }
         protected void btnRegistrar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (contrasenaValidar())
+                if (this.validarCampos())
                 {
-                    if (this.usuarioRegistrar())
+                    if (contrasenaValidar())
                     {
-                        this.mensajeMostrar("Enviamos un codigo de validacion a tu correo electronico, ingresalo para activar tu cuenta.");
+                        if (this.usuarioRegistrar())
+                        {
+                            Session["sUsuario"] = txtUsuario.Text.Replace(" ", "");
+                            this.mensajeMostrar("Enviamos un codigo de validacion a tu correo electronico, ingresalo para activar tu cuenta.");
+                        }
+                        else
+                        {
+                            this.mensajeMostrar("Error");
+                        }
                     }
                     else
                     {
-                        this.mensajeMostrar("Error");
+                        this.mensajeMostrar("Las contrase;as no coinciden");
                     }
-                }
-                else
-                {
-                    this.mensajeMostrar("Las contrase;as no coinciden");
                 }
             }
             catch (Exception ex)
@@ -221,9 +294,9 @@ namespace PortalEventus.Registro
             }
         }
 
-        protected void ddlPais_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ddlDepartamento.Enabled = ddlProvincia.Enabled = ddlDistrito.Enabled = ddlPais.SelectedItem.Value == "9589" ? true : false;
-        }
+        //protected void ddlPais_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    ddlDepartamento.Enabled = ddlProvincia.Enabled = ddlDistrito.Enabled = ddlPais.SelectedItem.Value == "9589" ? true : false;
+        //}
     }
 }

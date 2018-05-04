@@ -90,5 +90,17 @@ namespace BP_Eventus
             PersonaDAO objPersona = new PersonaDAO();
             return objPersona.usuarioExisteValidar(usuario);
         }
-    }
+
+        public Boolean documentoExisteValidar(String documento)
+        {
+            PersonaDAO objPersona = new PersonaDAO();
+            return objPersona.documentoExisteValidar(documento);
+        }
+
+        public List<Persona> usuarioConsultar(String usuario)
+        {
+            PersonaDAO objPersona = new PersonaDAO();
+            return objPersona.usuarioConsultar(usuario);
+        }
+   }
 }

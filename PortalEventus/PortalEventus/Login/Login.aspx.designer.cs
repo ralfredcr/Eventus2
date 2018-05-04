@@ -13,6 +13,15 @@ namespace PortalEventus.Login {
     public partial class Login {
         
         /// <summary>
+        /// panalert control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel panalert;
+        
+        /// <summary>
         /// tctUsuario control.
         /// </summary>
         /// <remarks>

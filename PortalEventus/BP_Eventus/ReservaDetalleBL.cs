@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace BP_Eventus
 {
-    public class ReservaBL
+    class ReservaDetalleBL
     {
-        ReservaDAO interfac = new ReservaDAO();
-
-        public int InsertReserva(ReservaBE obj)
+        ReservaDetalleDAO interfac = new ReservaDetalleDAO();
+        public int InsertReservaDetalle(ReservaDetalleBE obj)
         {
-            return interfac.InsertReserva(obj);
+            return interfac.InsertReservaDetalle(obj);
         }
+
     }
 }

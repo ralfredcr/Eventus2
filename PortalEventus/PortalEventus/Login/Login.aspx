@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="bodylogin" runat="server">
+    <asp:Panel ID="panalert" runat="server"></asp:Panel>
     <div id="boxlogin" class="container-fluid">
         <div class="container bkbox">
             <div class="lbox">
@@ -29,7 +30,7 @@
                 </div>
                 <div class="btnbox">
                     <div>
-                        <asp:Button ID="btnLogin" runat="server" CssClass="form-control btn-info" Text="Iniciar Sesión" />
+                        <asp:Button ID="btnLogin" runat="server" CssClass="form-control btn-info" Text="Iniciar Sesión" OnClick="btnLogin_Click" />
                     </div>
                 </div>
                 <div id="forgetbox" class="justify-content-end">
