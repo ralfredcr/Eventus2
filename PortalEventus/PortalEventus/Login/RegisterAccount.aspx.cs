@@ -322,6 +322,7 @@ namespace PortalEventus.Registro
 
 
                             this.mensajeMostrar("Enviamos un codigo de validacion a tu correo electronico, ingresalo para activar tu cuenta.");
+                            Response.Redirect("~/Index.aspx");
                         }
                         else
                         {
