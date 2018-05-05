@@ -13,9 +13,21 @@ namespace PortalEventus
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
-                CargarMenu(1);
+                if (Session[NombreSesiones.PerfilId] == null)
+                {
+                    
+                }
+                else
+                {
+                    int perfil = Convert.ToInt32(Session[NombreSesiones.PerfilId]);
+                    CargarMenu(perfil);
+                }
+
+
+                    
             }
                 
         }
