@@ -353,7 +353,7 @@ namespace BA_Eventus
                 using (SqlConnection connection = new SqlConnection(cadena))
                 {
                     connection.Open();
-                    using (SqlCommand cmd = new SqlCommand("pr_Login", connection))
+                    using (SqlCommand cmd = new SqlCommand("dbo.pr_Login", connection))
                     {
                         cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
                         cmd.Parameters.Add("@contrasena", SqlDbType.VarChar).Value = contrasena;
