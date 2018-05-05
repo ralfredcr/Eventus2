@@ -217,14 +217,14 @@ namespace BA_Eventus
                         cmd.Parameters.AddWithValue("@sexo", obj.sexo);
                         cmd.Parameters.AddWithValue("@fechaNacimiento", obj.fechaNacimiento);
                         cmd.Parameters.AddWithValue("@email", obj.correo);
-                        cmd.Parameters.AddWithValue("@telefono", obj.telefono);
-                        cmd.Parameters.AddWithValue("@celular", obj.celular);
-                        cmd.Parameters.AddWithValue("@direccion", obj.direccion);
-                        cmd.Parameters.AddWithValue("@pais", obj.pais);
-                        cmd.Parameters.AddWithValue("@ciudad", obj.ciudad);
-                        cmd.Parameters.AddWithValue("@codDepartamento", obj.codDepartamento);
-                        cmd.Parameters.AddWithValue("@codProvincia", obj.codProvincia);
-                        cmd.Parameters.AddWithValue("@codDistrito", obj.codDistrito);
+                        //cmd.Parameters.AddWithValue("@telefono", obj.telefono);
+                        //cmd.Parameters.AddWithValue("@celular", obj.celular);
+                        //cmd.Parameters.AddWithValue("@direccion", obj.direccion);
+                        //cmd.Parameters.AddWithValue("@pais", obj.pais);
+                        //cmd.Parameters.AddWithValue("@ciudad", obj.ciudad);
+                        //cmd.Parameters.AddWithValue("@codDepartamento", obj.codDepartamento);
+                        //cmd.Parameters.AddWithValue("@codProvincia", obj.codProvincia);
+                        //cmd.Parameters.AddWithValue("@codDistrito", obj.codDistrito);
                         //cmd.Parameters.AddWithValue("@ubigeoId", obj.idubigeo);
                         cmd.Parameters.AddWithValue("@nombreususario", obj.nombreUsuario);
                         cmd.Parameters.AddWithValue("@contrasena", obj.contrasena);
@@ -319,7 +319,7 @@ namespace BA_Eventus
                                     obj.nroDocumento = dr.GetString(9);
                                     obj.telefono = dr.GetString(10);
                                     obj.celular = dr.GetString(11);
-                                    obj.fechaNacimiento = dr.GetString(12);
+                                    obj.fechaNacimiento = dr.GetDateTime(12);
                                     obj.pais = dr.GetString(13);
                                     obj.codDepartamento = dr.GetString(14);
                                     obj.codProvincia = dr.GetString(15);
@@ -387,6 +387,36 @@ namespace BA_Eventus
 
             }
             return null;
+        }
+
+        public int habilitarCliente(string usuario)
+        {
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(cadena))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("pr_habilitarCliente", connection))
+                    {
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        cmd.CommandType = CommandType.StoredProcedure;
+
+                        cmd.ExecuteNonQuery();
+                        connection.Close();
+
+                        return 1;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return 0;
+            }
+
         }
 
 

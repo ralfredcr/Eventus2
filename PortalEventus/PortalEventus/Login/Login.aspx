@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div id="newbox">
-                    ¿Todavía no estás en Eventus?&nbsp;&nbsp;<asp:LinkButton ID="lknSignUp" runat="server" CssClass="btn btn-outline-success btn-sm">Regístrate</asp:LinkButton>
+                    ¿Todavía no estás en Eventus?&nbsp;&nbsp;<asp:LinkButton ID="lknSignUp" runat="server" CssClass="btn btn-outline-success btn-sm" OnClick="lknSignUp_Click">Regístrate</asp:LinkButton>
                 </div>
             </div>
         </div>

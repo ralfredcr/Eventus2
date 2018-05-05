@@ -20,7 +20,7 @@ namespace BE_Eventus
         public String nroDocumento { get; set; }
         public String telefono { get; set; }
         public String celular { get; set; }
-        public String fechaNacimiento { get; set; }
+        public DateTime fechaNacimiento { get; set; }
         public int idubigeo { get; set; }
         public String pais { get; set; }
         public String codDepartamento { get; set; }

@@ -6,11 +6,15 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using BP_Eventus;
 using BE_Eventus;
+using System.Net.Mail;
+using System.Text;
 
 namespace PortalEventus.Registro
 {
     public partial class RegisterAccount : System.Web.UI.Page
     {
+        MailMessage mail = new MailMessage();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
@@ -207,7 +211,7 @@ namespace PortalEventus.Registro
                     obj.correo = txtCorreo.Text;
                     obj.contrasena = txtContrasena.Text;
                     obj.nroDocumento = txtNumeroDoc.Text;
-                    obj.fechaNacimiento = txtFechaNacimiento.Text;
+                    obj.fechaNacimiento = Convert.ToDateTime(txtFechaNacimiento.Text);
                     obj.telefono = null;// txtTelefono.Text;
                     obj.celular = null;// txtCelular.Text;
                     obj.direccion = null;// txtDireccion.Text;
@@ -223,6 +227,11 @@ namespace PortalEventus.Registro
                     resultado = objPersona.usuarioRegistrar(obj);
                 }
                 return resultado;
+
+                
+
+
+
             }
             catch (Exception ex)
             {
@@ -275,6 +284,43 @@ namespace PortalEventus.Registro
                         if (this.usuarioRegistrar())
                         {
                             Session["sUsuario"] = txtUsuario.Text.Replace(" ", "");
+
+                            // Enviar Correo
+                            SmtpClient SmtpServer = new SmtpClient();
+                            SmtpServer.Credentials = new System.Net.NetworkCredential
+                                        ("EventoInformativo@gmail.com", "P@ssword100");
+                            SmtpServer.Port = 587;
+                            SmtpServer.Host = "smtp.gmail.com";
+                            SmtpServer.EnableSsl = true;
+                            mail = new MailMessage();
+                            String[] addr = txtCorreo.Text.Split(',');
+
+                            try
+                            {
+                                var body = new StringBuilder();
+                                body.AppendFormat("Hola, {0}\n", txtNombre.Text + ' ' + txtApeparterno.Text);
+                                body.AppendLine(@"Su cuenta de EVENTOS a punto de activar haga clic en el siguiente enlace para completar el proceso de activación");
+                                body.AppendLine("<br/>");
+                                body.AppendLine("<a href=\"http://localhost:50228/ValidarUsuario.aspx?usuario=" + txtUsuario.Text + "\">login</a>");
+                                
+                                mail.From = new MailAddress("EventoInformativo@gmail.com", "Developers", System.Text.Encoding.UTF8);
+                                Byte i;
+                                for (i = 0; i < addr.Length; i++)
+                                    mail.To.Add(addr[i]);
+                                mail.Subject = "Confirmar Usuario";
+                                mail.Body = body.ToString();
+                                mail.IsBodyHtml = true;
+
+                                SmtpServer.Send(mail);
+
+                            }
+                            catch (Exception)
+                            {
+
+                                throw;
+                            }
+
+
                             this.mensajeMostrar("Enviamos un codigo de validacion a tu correo electronico, ingresalo para activar tu cuenta.");
                         }
                         else
@@ -292,6 +338,11 @@ namespace PortalEventus.Registro
             {
                 this.mensajeMostrar(ex.Message.ToString());
             }
+        }
+
+        protected void btnCancelar_Click(object sender, EventArgs e)
+        {
+
         }
 
         //protected void ddlPais_SelectedIndexChanged(object sender, EventArgs e)

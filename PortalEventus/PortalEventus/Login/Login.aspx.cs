@@ -83,6 +83,9 @@ namespace PortalEventus.Login
             //Session.Add("URLServidor", Request.ServerVariables["HTTP_HOST"] + Request.ApplicationPath);
         }
 
-
+        protected void lknSignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterAccount.aspx");
+        }
     }
 }

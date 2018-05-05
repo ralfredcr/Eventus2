@@ -45,7 +45,7 @@ namespace PortalEventus
                     txtNumeroDoc.Text = item.nroDocumento;
                     txtTelefono.Text = item.telefono;
                     txtCelular.Text = item.celular;
-                    txtFechaNacimiento.Text = item.fechaNacimiento;
+                    txtFechaNacimiento.Text = item.fechaNacimiento.ToString("yyyy-MM-ddTHH:mm");
                     txtCiudad.Text = item.ciudad;
                     txtDireccion.Text = item.direccion;
                 }

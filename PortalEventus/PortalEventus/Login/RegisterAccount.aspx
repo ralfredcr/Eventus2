@@ -26,7 +26,7 @@
                         <div class="col-md-1"></div>
                         <div class="col-md-4"><asp:TextBox ID="txtUsuario" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
                         <div class="col-md-2"></div>
-                        <div class="col-md-4"><asp:TextBox ID="txtCorreo" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtCorreo" CssClass="form-control form-control-sm" runat="server" ></asp:TextBox></div>
                         <div class="col-md-1"></div>
                     </div>
                     <div class="row">
@@ -38,9 +38,9 @@
                     </div>
                     <div class="row pb-3">
                         <div class="col-md-1"></div>
-                        <div class="col-md-4"><asp:TextBox ID="txtContrasena" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtContrasena" CssClass="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox></div>
                         <div class="col-md-2"></div>
-                        <div class="col-md-4"><asp:TextBox ID="txtContrasena2" CssClass="form-control form-control-sm" runat="server"></asp:TextBox></div>
+                        <div class="col-md-4"><asp:TextBox ID="txtContrasena2" CssClass="form-control form-control-sm" runat="server" TextMode="Password"></asp:TextBox></div>
                         <div class="col-md-1"></div>
                     </div>
                     <div class="row">
@@ -132,7 +132,7 @@
             <div class="row pb-5">
                 <div class="col-md-4"></div>
                 <div class="col-md-2"><asp:Button ID="btnRegistrar" runat="server" CssClass="form-control btn-info" Text="Registrar" OnClick="btnRegistrar_Click" /></div>
-                <div class="col-md-2"><asp:Button ID="btnCancelar" runat="server" CssClass="form-control btn-light" Text="Cancelar" /></div>
+                <div class="col-md-2"><asp:Button ID="btnCancelar" runat="server" CssClass="form-control btn-light" Text="Cancelar" OnClick="btnCancelar_Click" /></div>
                 <div class="col-md-4"></div>
             </div>
         </div>
