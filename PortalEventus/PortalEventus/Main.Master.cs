@@ -91,5 +91,14 @@ namespace PortalEventus
 
         }
 
+        protected void lknIniciar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login/Login.aspx");
+        }
+
+        protected void lknRegistrar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Login/RegisterAccount.aspx");
+        }
     }
 }
