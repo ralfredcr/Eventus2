@@ -26,9 +26,9 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="navbar-nav ml-auto">
-                            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal"></asp:Menu>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" >
+                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="nav"></asp:Menu>
+                        <div class="navbar-nav ml-auto">                        
                             <div class="text-center mr-0 mr-lg-2 mb-2 mb-lg-0">
                                 <asp:LinkButton ID="lknIniciar" runat="server" CssClass="btn btn-light btn-sm shadow" OnClick="lknIniciar_Click">Inicia Sesión</asp:LinkButton>
                             </div>
@@ -37,6 +37,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </nav>
             </div>
         </header>

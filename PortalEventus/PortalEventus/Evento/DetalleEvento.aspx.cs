@@ -83,5 +83,10 @@ namespace PortalEventus.Evento
         {
             Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
         }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Evento/ActualizarEvento.aspx?eventoid=" + eventoid);
+        }
     }
 }

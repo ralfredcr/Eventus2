@@ -123,10 +123,15 @@ namespace PortalEventus.Evento
 
                 }
 
-                CargarCategoria();
-                CargarEvento();
-                CargarZona();
+                Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
+                //CargarCategoria();
+                //CargarEvento();
+                //CargarZona();
+
+
             }
+
+
         }
 
         public void CargarCategoria()
@@ -146,7 +151,7 @@ namespace PortalEventus.Evento
         public void CargarEvento()
         {
             EventoBE obj = new EventoBE();
-            obj = iEvento.ObtenerEvento(1);
+            obj = iEvento.ObtenerEvento(eventoid);
 
             txtTitulo.Text = obj.titulo;
             txtDescripcion.Text = obj.descripcionEvento;
@@ -190,6 +195,9 @@ namespace PortalEventus.Evento
 
         }
 
-
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
+        }
     }
 }
