@@ -29,7 +29,7 @@
                             <asp:DataList ID="dtlEvents" runat="server" GridLines="Both" RepeatColumns="3" RepeatDirection="Horizontal">
                                 <ItemStyle BackColor="White" ForeColor="Black" BorderWidth="2px" CssClass="text-center" />
                                 <ItemTemplate>
-                                    <asp:Image ID="imgEvent" runat="server" Width="100px" ImageUrl='<%#DataBinder.Eval(Container.DataItem, "RutaImagen") %>'  />
+                                    <asp:Image ID="imgEvent" runat="server" Width="100px" ImageUrl='<%# ((Eval("RutaImagen") is System.DBNull) ? "[Path to blank image]" : "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("RutaImagen"))) %>'  />                                
                                     <br />
                                     <asp:Label ID="lblTitulo" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"titulo")  %>'></asp:Label>
                                     <br />

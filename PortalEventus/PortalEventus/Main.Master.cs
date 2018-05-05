@@ -18,12 +18,16 @@ namespace PortalEventus
             {
                 if (Session[NombreSesiones.PerfilId] == null)
                 {
-                    
+                    lknIniciar.Visible = true;
+                    lknRegistrar.Visible = true;
                 }
                 else
                 {
                     int perfil = Convert.ToInt32(Session[NombreSesiones.PerfilId]);
                     CargarMenu(perfil);
+
+                    lknIniciar.Visible = false;
+                    lknRegistrar.Visible = false;
                 }
 
 
