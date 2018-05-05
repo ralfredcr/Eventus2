@@ -27,13 +27,16 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
-                        <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="nav"></asp:Menu>
-                        <div class="navbar-nav ml-auto">                        
+                        <div class="navbar-nav ml-auto">
+                            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" CssClass="text-right alert-info"></asp:Menu>
                             <div class="text-center mr-0 mr-lg-2 mb-2 mb-lg-0">
                                 <asp:LinkButton ID="lknIniciar" runat="server" CssClass="btn btn-light btn-sm shadow" OnClick="lknIniciar_Click">Inicia Sesión</asp:LinkButton>
                             </div>
                             <div class="text-center">
                                 <asp:LinkButton ID="lknRegistrar" runat="server" CssClass="btn btn-info btn-sm shadow" OnClick="lknRegistrar_Click">Registrate</asp:LinkButton>
+                            </div>
+                            <div class="text-center">
+                                <asp:LinkButton ID="lknCerrar" runat="server" CssClass="btn btn-warning btn-sm shadow" OnClick="lknCerrar_Click">Cerrar Sesión</asp:LinkButton>
                             </div>
                         </div>
                     </div>

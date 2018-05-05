@@ -343,7 +343,7 @@ namespace PortalEventus.Registro
 
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("../Index.aspx");
         }
 
         //protected void ddlPais_SelectedIndexChanged(object sender, EventArgs e)

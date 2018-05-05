@@ -20,6 +20,7 @@ namespace PortalEventus
                 {
                     lknIniciar.Visible = true;
                     lknRegistrar.Visible = true;
+                    lknCerrar.Visible = false;
                 }
                 else
                 {
@@ -28,6 +29,7 @@ namespace PortalEventus
 
                     lknIniciar.Visible = false;
                     lknRegistrar.Visible = false;
+                    lknCerrar.Visible = true;
                 }                   
             }
                 
@@ -100,6 +102,13 @@ namespace PortalEventus
         protected void lknRegistrar_Click(object sender, EventArgs e)
         {
             Response.Redirect("Login/RegisterAccount.aspx");
+        }
+
+        protected void lknCerrar_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            Session.Clear();
+            Response.Redirect("Index.aspx");
         }
     }
 }
