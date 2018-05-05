@@ -84,6 +84,7 @@
                 <div class="col-md-4"></div>
                 <div class="col-md-2">
 				    <asp:Button ID="btnReservar" runat="server" CssClass="form-control btn-info" Text="Reservar Evento" />
+                    <asp:Button ID="btnActualizar" runat="server" CssClass="form-control btn-info" Text="Actualizar" OnClick="btnActualizar_Click" />
                 </div>
                 <div class="col-md-2">
                     <asp:Button ID="btnSalir" runat="server" CssClass="form-control btn-light" Text="Regresar" OnClick="btnSalir_Click" />

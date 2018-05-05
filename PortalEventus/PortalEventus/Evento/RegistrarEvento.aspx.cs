@@ -93,6 +93,8 @@ namespace PortalEventus.Evento
                    
 
                 }
+
+                Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
             }
 
 
@@ -132,5 +134,9 @@ namespace PortalEventus.Evento
 
         }
 
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
+        }
     }
 }

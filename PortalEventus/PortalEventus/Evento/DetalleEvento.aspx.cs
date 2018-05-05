@@ -33,6 +33,28 @@ namespace PortalEventus.Evento
             if (!IsPostBack)
             {
                 CargarEvento();
+
+                if (Session[NombreSesiones.PerfilId] == null)
+                {
+                    btnReservar.Visible = false;
+                    btnActualizar.Visible = false;
+                }
+                else
+                {
+                    int perfil = Convert.ToInt32(Session[NombreSesiones.PerfilId]);
+
+                    if (perfil == 1)
+                    {
+                        btnReservar.Visible = false;
+                        btnActualizar.Visible = true;
+                    }
+                    else
+                    {
+                        btnReservar.Visible = true;
+                        btnActualizar.Visible = false;
+                    }
+                }
+
             }
         }
 
@@ -60,6 +82,11 @@ namespace PortalEventus.Evento
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
+        }
+
+        protected void btnActualizar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Evento/ActualizarEvento.aspx?eventoid=" + eventoid);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE_Eventus;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,20 @@ namespace PortalEventus
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                if (Session[NombreSesiones.PerfilId] == null)
+                {
+                    txtBuscar.Visible = false;
+                    btnBuscar.Visible = false;
+                }
+                else
+                {
+                    txtBuscar.Visible = true;
+                    btnBuscar.Visible = true;
+                }
+                
+            }
         }
 
 

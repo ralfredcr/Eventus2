@@ -85,7 +85,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-1"></div>
-                        <div class="col-md-4 ml-2 text-left">Listar Eventos</div>
+                        <div class="col-md-4 ml-2 text-left">Listar Zonas</div>
                         <div class="col-md-2"></div>
                         <div class="col-md-4 ml-2"></div>
                         <div class="col-md-1"></div>
@@ -133,7 +133,7 @@
                     <asp:Button ID="btnGrabar" runat="server" CssClass="form-control btn-info" Text="Grabar" OnClick="btnGrabar_Click" />
                 </div>
                 <div class="col-md-2">
-                    <asp:Button ID="btnSalir" runat="server" CssClass="form-control btn-light" Text="Cancelar" />
+                    <asp:Button ID="btnSalir" runat="server" CssClass="form-control btn-light" Text="Cancelar" OnClick="btnSalir_Click" />
                 </div>
                 <div class="col-md-4"></div>
             </div>
