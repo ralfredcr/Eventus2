@@ -1,37 +1,53 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main.Master" AutoEventWireup="true" CodeBehind="ListarEvento.aspx.cs" Inherits="PortalEventus.Evento.ListarEvento" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <div class="container-fluid">
+        <div class="container bkboxvw">
+            <div class="frmbox">                
+                <div class="titlebox">
+                    <p class="tittle">Listado de Eventos</p>
+                </div>
+                <div class="controlbox">
+                    <div class="row">
+                        <div class="col-md-4 ml-2 text-left">Descripción:</div>
+                        <div class="col-md-3 ml-2 text-left">Fecha de Inicio:</div>
+                        <div class="col-md-3 ml-2 text-left">Categoría</div>
+                        <div class="col-md-2"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-4"><asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control form-control-sm"></asp:TextBox></div>
+                        <div class="col-md-3"><asp:TextBox ID="txtFechaInicio" runat="server" CssClass="form-control form-control-sm" TextMode="DateTimeLocal" /></div>
+                        <div class="col-md-3"><asp:DropDownList ID="cboCategoria" runat="server" CssClass="form-control form-control-sm"></asp:DropDownList></div>
+                        <div class="col-md-2"><asp:Button ID="btnBuscar" CssClass="btn btn-info btn-sm" runat="server" Text="Buscar Eventos" OnClick="btnBuscar_Click" /></div>
+                    </div>
+                </div>
+                <div class="viewbox">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <asp:DataList ID="dtlEvents" runat="server" GridLines="Both" RepeatColumns="3" RepeatDirection="Horizontal">
+                                <ItemStyle BackColor="White" ForeColor="Black" BorderWidth="2px" CssClass="text-center" />
+                                <ItemTemplate>
+                                    <asp:Image ID="imgEvent" runat="server" Width="100px" ImageUrl='<%#DataBinder.Eval(Container.DataItem, "RutaImagen") %>'  />
+                                    <br />
+                                    <asp:Label ID="lblTitulo" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"titulo")  %>'></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblCategoria" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"descripcionCateg")  %>'></asp:Label>
+                                    <br />
+                                    <asp:Label ID="lblFecInicio" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaInicio")  %>'></asp:Label>
+                                    <br />
+                                    <asp:Label ID="FecFin" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaFin")  %>'></asp:Label>
+                                    <br />
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <table class="w-100">
-        <tr style="text-align: center; font-size: 23px">
-            <td colspan="2">Listar Evento</td>
-        </tr>
-        <tr>
-            <td>Descripción:</td>
-            <td>Categoria;</td>
-        </tr>
-        <tr>
-            <td >
-                <asp:TextBox ID="txtDescripcion" runat="server" Width="396px"></asp:TextBox>
-            </td>
-            <td>
-                <asp:DropDownList ID="cboCategoria" runat="server" Width="234px"></asp:DropDownList>
-            </td>
-        </tr>
-        <tr>
-            <td>Fecha Inicio:</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="txtFechaInicio" runat="server"  TextMode="DateTimeLocal" />
-            </td>
-            <td>
-                <asp:Button ID="btnBuscar" runat="server" Text="Buscar Eventos" OnClick="btnBuscar_Click" />
-            </td>
-        </tr>
         <tr>
             <td colspan="2">
                 <asp:GridView ID="gEvento" runat="server" AutoGenerateColumns="False">

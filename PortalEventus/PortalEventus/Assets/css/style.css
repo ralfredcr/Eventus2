@@ -78,6 +78,16 @@ div.bkbox {
     min-height:520px;
     box-shadow:0 2px 10px rgba(0,0,0,0.45);
 }
+div.bkboxvw {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    position: relative;
+    text-align: center;
+    width: 1024px;
+    margin: auto;
+    min-height: 520px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
 div.frmbox {
     padding: 20px 10px;
     /*text-align: center;

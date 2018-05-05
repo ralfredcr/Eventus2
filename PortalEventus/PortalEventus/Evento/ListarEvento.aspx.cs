@@ -46,6 +46,11 @@ namespace PortalEventus.Evento
             lista = iEvento.LstEvento("", descripcionAdicional,-1, Convert.ToDateTime("10/10/1900"));
             gEvento.DataSource = lista;
             gEvento.DataBind();
+
+            
+
+            dtlEvents.DataSource = lista;
+            dtlEvents.DataBind();
         }
 
         public void CargarCategoria()
