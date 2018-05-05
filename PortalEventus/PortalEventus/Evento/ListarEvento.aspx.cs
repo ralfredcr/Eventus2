@@ -46,10 +46,9 @@ namespace PortalEventus.Evento
             List<EventoBE> lista = new List<EventoBE>();
 
             lista = iEvento.LstEvento("", descripcionAdicional,-1, Convert.ToDateTime("10/10/1900"));
-            gEvento.DataSource = lista;
+            /*gEvento.DataSource = lista;
             gEvento.DataBind();
-
-            
+            */           
 
             dtlEvents.DataSource = lista;
             dtlEvents.DataBind();
@@ -88,8 +87,8 @@ namespace PortalEventus.Evento
             
 
             lista = iEvento.LstEvento("", txtDescripcion.Text, categoriaid, fecha);
-            gEvento.DataSource = lista;
-            gEvento.DataBind();
+            /*gEvento.DataSource = lista;
+            gEvento.DataBind();*/
 
             dtlEvents.DataSource = lista;
             dtlEvents.DataBind();

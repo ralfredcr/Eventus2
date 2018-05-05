@@ -81,7 +81,8 @@ namespace PortalEventus.Evento
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
+            /*Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");*/
+            Response.Redirect("ListarEvento.aspx?descripcionAdicional=" + "");
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)

@@ -27,18 +27,19 @@
                     <div class="row">
                         <div class="col-md-12">
                             <asp:DataList ID="dtlEvents" runat="server" GridLines="Both" RepeatColumns="3" RepeatDirection="Horizontal">
-                                <ItemStyle BackColor="White" ForeColor="Black" BorderWidth="2px" CssClass="text-center" />
+                                <ItemStyle CssClass="text-center" Width="340px" />
                                 <ItemTemplate>
-                                    <asp:Image ID="imgEvent" runat="server" Width="100px" ImageUrl='<%# ((Eval("RutaImagen") is System.DBNull) ? "[Path to blank image]" : "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("RutaImagen"))) %>'  />                                
+                                    <asp:Image ID="imgEvent" CssClass="img-fluid" runat="server" Width="150px" ImageUrl='<%# ((Eval("RutaImagen") is System.DBNull) ? "[Path to blank image]" : "data:image/jpg;base64," + Convert.ToBase64String((byte[])Eval("RutaImagen"))) %>'  />                                
+                                    <br /><br />
+                                    <asp:Label ID="lblTitulo" CssClass="font-weight-bold" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"titulo")  %>'></asp:Label>
                                     <br />
-                                    <asp:Label ID="lblTitulo" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"titulo")  %>'></asp:Label>
+                                    <span class="alert-info">Categoría:</span>&nbsp;<asp:Label ID="lblCategoria" CssClass="font-weight-normal" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"descripcionCateg")  %>'></asp:Label>
                                     <br />
-                                    <asp:Label ID="lblCategoria" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"descripcionCateg")  %>'></asp:Label>
+                                    <span class="alert-info">Fecha:</span>&nbsp;<asp:Label ID="lblFecInicio" CssClass="font-weight-light" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaInicio", "{0:d/M/yyyy}")  %>'></asp:Label>
                                     <br />
-                                    <asp:Label ID="lblFecInicio" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaInicio")  %>'></asp:Label>
-                                    <br />
-                                    <asp:Label ID="FecFin" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaFin")  %>'></asp:Label>
-                                    <br />
+                                    <span class="alert-info">Hora:</span>&nbsp;<asp:Label ID="Label1" CssClass="font-weight-light" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaInicio", "{0: hh:mm tt}")  %>'></asp:Label>&nbsp;&nbsp;A&nbsp;&nbsp;<asp:Label ID="FecFin" CssClass="font-weight-light" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaFin", "{0: hh:mm tt}")  %>'></asp:Label>
+                                    <br /><br />
+                                    <asp:LinkButton ID="lnkDetalle" CssClass="btn-info btn-sm" runat="server" PostBackUrl='<%# "DetalleEvento.aspx?ID="+Eval("eventoid") %>'>Ver Detalle</asp:LinkButton>
                                 </ItemTemplate>
                             </asp:DataList>
                         </div>
@@ -47,25 +48,4 @@
             </div>
         </div>
     </div>
-    <table class="w-100">
-        <tr>
-            <td colspan="2">
-                <asp:GridView ID="gEvento" runat="server" AutoGenerateColumns="False">
-                    <Columns>
-                        <asp:BoundField DataField="titulo" HeaderText="titulo" />
-                        <asp:BoundField DataField="descripcion" HeaderText="descripcion" />
-                        <asp:BoundField DataField="descripcionAdicional" HeaderText="descripcionAdicional" />
-                        <asp:BoundField DataField="descripcionCateg" HeaderText="descripcionCateg" />
-                        <asp:BoundField DataField="fechaInicio" HeaderText="fechaInicio" />
-                        <asp:BoundField DataField="fechaFin" HeaderText="fechaFin" />
-                        <asp:BoundField DataField="estado" HeaderText="estado" />
-                    </Columns>
-                </asp:GridView>
-            </td>
-        </tr>
-        <tr>
-            <td >&nbsp;</td>
-            <td>&nbsp;</td>
-        </tr>
-    </table>
 </asp:Content>
