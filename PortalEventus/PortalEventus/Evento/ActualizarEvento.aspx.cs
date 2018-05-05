@@ -76,7 +76,7 @@ namespace PortalEventus.Evento
             Byte[] bytes = br.ReadBytes((Int32)fs.Length);
 
             EventoBE obj = new EventoBE();
-            obj.eventoid = 1;
+            obj.eventoid = eventoid;
             obj.titulo = txtTitulo.Text;
             obj.descripcion = txtDescripcion.Text;
             obj.descripcionAdicional = txtDescripcionAdicional.Text;
@@ -102,7 +102,7 @@ namespace PortalEventus.Evento
 
             if (resultado == 1)
             {
-                iZonaEvento.DeleteEventoZona(1);
+                iZonaEvento.DeleteEventoZona(eventoid);
 
                 foreach (GridViewRow row in gZona.Rows)
                 {
@@ -113,7 +113,7 @@ namespace PortalEventus.Evento
                     if (vzona.Text != "" && vprecio.Text != "" && vcantidad.Text != "")
                     {
                         ZonaEventoBE obj2 = new ZonaEventoBE();
-                        obj2.eventoid = resultado;
+                        obj2.eventoid = eventoid;
                         obj2.zona = vzona.Text;
                         obj2.precio = Convert.ToDecimal(vprecio.Text);
                         obj2.cantidadMax = Convert.ToInt32(vcantidad.Text);
@@ -123,7 +123,8 @@ namespace PortalEventus.Evento
 
                 }
 
-                Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
+                /*Response.Redirect("ListarEvento.aspx?descripcionAdicional=" + "");*/
+                Response.Redirect("DetalleEvento.aspx?eventoid=" + eventoid);
                 //CargarCategoria();
                 //CargarEvento();
                 //CargarZona();
@@ -175,7 +176,7 @@ namespace PortalEventus.Evento
         {
             List<ZonaEventoBE> lista = new List<ZonaEventoBE>();
 
-            lista = iZonaEvento.ObtenerEventoZona(1);
+            lista = iZonaEvento.ObtenerEventoZona(eventoid);
 
             if (lista.Count < 5)
             {
@@ -197,7 +198,7 @@ namespace PortalEventus.Evento
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Evento/ListarEvento.aspx?descripcionAdicional=" + "");
+            Response.Redirect("ListarEvento.aspx?descripcionAdicional=" + "");
         }
     }
 }

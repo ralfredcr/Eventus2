@@ -39,7 +39,7 @@
                                     <br />
                                     <span class="alert-info">Hora:</span>&nbsp;<asp:Label ID="Label1" CssClass="font-weight-light" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaInicio", "{0: hh:mm tt}")  %>'></asp:Label>&nbsp;&nbsp;A&nbsp;&nbsp;<asp:Label ID="FecFin" CssClass="font-weight-light" runat="server" Text='<%# DataBinder.Eval(Container.DataItem,"fechaFin", "{0: hh:mm tt}")  %>'></asp:Label>
                                     <br /><br />
-                                    <asp:LinkButton ID="lnkDetalle" CssClass="btn-info btn-sm" runat="server" PostBackUrl='<%# "DetalleEvento.aspx?ID="+Eval("eventoid") %>'>Ver Detalle</asp:LinkButton>
+                                    <asp:LinkButton ID="lnkDetalle" CssClass="btn-info btn-sm" runat="server" PostBackUrl='<%# "DetalleEvento.aspx?eventoid="+Eval("eventoid") %>'>Ver Detalle</asp:LinkButton>
                                 </ItemTemplate>
                             </asp:DataList>
                         </div>

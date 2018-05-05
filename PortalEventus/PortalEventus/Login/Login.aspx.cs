@@ -24,6 +24,7 @@ namespace PortalEventus.Login
             panalert.Style.Add("height", "0px;");
 
             Persona obj = new Persona();
+
             obj = iPersonaBL.Login(txtUsuario.Text, txtContrasena.Text);
 
             if (obj == null)

@@ -61,7 +61,7 @@ namespace PortalEventus.Evento
         public void CargarEvento()
         {
             EventoBE obj = new EventoBE();
-            obj = iEvento.ObtenerEvento(1);
+            obj = iEvento.ObtenerEvento(eventoid);
 
             txtTitulo.Text = obj.titulo;
             txtDescripcion.Text = obj.descripcionEvento;
@@ -87,7 +87,7 @@ namespace PortalEventus.Evento
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Evento/ActualizarEvento.aspx?eventoid=" + eventoid);
+            Response.Redirect("ActualizarEvento.aspx?eventoid=" + eventoid);
         }
     }
 }
