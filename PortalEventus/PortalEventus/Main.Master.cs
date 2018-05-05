@@ -56,40 +56,40 @@ namespace PortalEventus
 
                     //AHORA MANDAMOS OTRO METODO, LO QUE HARA ES RECORRER NUEVAMENTE LA LISTA PARA VER CUALES SON SUS HIJO
                     //Y ASI PODER AGREGARLOS COMO SUBITEMS
-                    addSubItemMenu(mnuMenuItem, lista);
+                    //addSubItemMenu(mnuMenuItem, lista);
 
                 }
             }
 
         }
 
-        static void addSubItemMenu(MenuItem mnuMenuItem, List<OpcionBE> lista)
-        {
-            foreach (var item in lista)
-            {
+        //static void addSubItemMenu(MenuItem mnuMenuItem, List<OpcionBE> lista)
+        //{
+        //    foreach (var item in lista)
+        //    {
 
-                //QUIERE DECIR QUE ES HIJO, SE HACE UNA CONDICIONAL NEGATIVO PARA EVITAR AL MISMO NODE PADRE
-                if (item.PadreId.ToString().Equals(mnuMenuItem.Value) && !item.OpcionesId.ToString().Equals(mnuMenuItem.Value))
-                {
-                    // ITEM QUE SE AGREGA AL SUB MENU
-                    MenuItem mnuHijoMenuItem = new MenuItem();
-                    MenuItem ParentItem = mnuMenuItem;
+        //        //QUIERE DECIR QUE ES HIJO, SE HACE UNA CONDICIONAL NEGATIVO PARA EVITAR AL MISMO NODE PADRE
+        //        if (item.PadreId.ToString().Equals(mnuMenuItem.Value) && !item.OpcionesId.ToString().Equals(mnuMenuItem.Value))
+        //        {
+        //            // ITEM QUE SE AGREGA AL SUB MENU
+        //            MenuItem mnuHijoMenuItem = new MenuItem();
+        //            MenuItem ParentItem = mnuMenuItem;
 
-                    mnuHijoMenuItem.Value = item.OpcionesId.ToString();
-                    mnuHijoMenuItem.Text = item.DescOpciones;
-                    mnuHijoMenuItem.NavigateUrl = item.URL;
+        //            mnuHijoMenuItem.Value = item.OpcionesId.ToString();
+        //            mnuHijoMenuItem.Text = item.DescOpciones;
+        //            mnuHijoMenuItem.NavigateUrl = item.URL;
 
-                    //AGREGAMOS EL ITEM AL MENÚ
-                    ParentItem.ChildItems.Add(mnuHijoMenuItem);
+        //            //AGREGAMOS EL ITEM AL MENÚ
+        //            ParentItem.ChildItems.Add(mnuHijoMenuItem);
 
-                    //AQUI SE PODRIA LLAMAR AL METODO ADDSUBITEMMENU NUEVAMENTE, PARA VERIFICAR SI ESTE ESTE MENU HIJO TIENE MENU HIJOS
-                    //addSubItemMenu2(mnuHijoMenuItem, lstAcceso);
+        //            //AQUI SE PODRIA LLAMAR AL METODO ADDSUBITEMMENU NUEVAMENTE, PARA VERIFICAR SI ESTE ESTE MENU HIJO TIENE MENU HIJOS
+        //            //addSubItemMenu2(mnuHijoMenuItem, lstAcceso);
 
-                }
+        //        }
 
-            }
+        //    }
 
-        }
+        //}
 
         protected void lknIniciar_Click(object sender, EventArgs e)
         {
