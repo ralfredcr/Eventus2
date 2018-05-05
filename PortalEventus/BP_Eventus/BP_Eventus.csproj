@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="CategoriaBL.cs" />
     <Compile Include="EventoBL.cs" />
+    <Compile Include="OpcionBL.cs" />
     <Compile Include="PersonaBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReservaBL.cs" />

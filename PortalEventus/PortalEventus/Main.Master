@@ -28,12 +28,13 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <div class="navbar-nav ml-auto">
-                            <div class="text-center mr-0 mr-lg-2 mb-2 mb-lg-0">
+                            <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal"></asp:Menu>
+                           <%-- <div class="text-center mr-0 mr-lg-2 mb-2 mb-lg-0">
                                 <a href="#" class="btn btn-light btn-sm shadow">Inicia Sesión</a>
                             </div>
                             <div class="text-center">
                                 <a href="#" class="btn btn-info btn-sm shadow">Registrate</a>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </nav>

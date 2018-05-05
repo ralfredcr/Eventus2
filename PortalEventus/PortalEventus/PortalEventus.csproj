@@ -83,6 +83,12 @@
     <Content Include="Evento\DetalleEvento.aspx" />
     <Content Include="Evento\ListarEvento.aspx" />
     <Content Include="Evento\RegistrarEvento.aspx" />
+    <Content Include="Imagenes\Catalogo.png" />
+    <Content Include="Imagenes\Inicio.png" />
+    <Content Include="Imagenes\Logo.png" />
+    <Content Include="Imagenes\Pagos.png" />
+    <Content Include="Imagenes\Reservas.png" />
+    <Content Include="Imagenes\Suscripcion.png" />
     <Content Include="Index.aspx" />
     <Content Include="Login\Login.aspx" />
     <Content Include="Login\RegisterAccount.aspx" />

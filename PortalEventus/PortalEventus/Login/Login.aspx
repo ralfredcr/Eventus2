@@ -28,7 +28,7 @@
                         <asp:TextBox ID="txtContrasena" runat="server" CssClass="form-control" placeholder="Ingrese su contraseña..." TextMode="Password"></asp:TextBox>
                     </div>
                     <div>
-                        <asp:Label ID="lblError" runat="server" ForeColor="Red" ></asp:Label>
+                        <asp:Label ID="lblError" runat="server" ForeColor="Red" Font-Bold="true" ></asp:Label>
                     </div>
                 </div>
                 <div class="btnbox">
