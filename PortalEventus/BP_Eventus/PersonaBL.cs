@@ -102,5 +102,11 @@ namespace BP_Eventus
             PersonaDAO objPersona = new PersonaDAO();
             return objPersona.usuarioConsultar(usuario);
         }
-   }
+
+        public Persona Login(string usuario, string contrasena)
+        {
+            PersonaDAO objPersona = new PersonaDAO();
+            return objPersona.Login(usuario, contrasena);
+        }
+    }
 }

@@ -28,6 +28,10 @@ namespace BE_Eventus
         public String codDistrito { get; set; }
         public String nombreUsuario { get; set; }
         public String contrasena { get; set; }
+
+        public int usuarioid { get; set; }
+        public int PerfilId { get; set; }
+        public String DescPerfil { get; set; }
     }
     public class Usuario
     {

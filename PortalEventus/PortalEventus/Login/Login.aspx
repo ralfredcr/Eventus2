@@ -20,12 +20,15 @@
                 <div class="formbox">
                     <p>Usuario:</p>
                     <div>
-                        <asp:TextBox ID="tctUsuario" runat="server" CssClass="form-control" placeholder="Ingrese su usuario..."></asp:TextBox>
+                        <asp:TextBox ID="txtUsuario" runat="server" CssClass="form-control" placeholder="Ingrese su usuario..."></asp:TextBox>
                     </div>
                     <br />
                     <p>Contraseña</p>
                     <div>
                         <asp:TextBox ID="txtContrasena" runat="server" CssClass="form-control" placeholder="Ingrese su contraseña..." TextMode="Password"></asp:TextBox>
+                    </div>
+                    <div>
+                        <asp:Label ID="lblError" runat="server" ForeColor="Red" ></asp:Label>
                     </div>
                 </div>
                 <div class="btnbox">

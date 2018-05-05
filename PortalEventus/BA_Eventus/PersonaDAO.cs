@@ -342,5 +342,53 @@ namespace BA_Eventus
                 throw;
             }
         }
+
+
+        // EGV
+        public Persona Login(string usuario, string contrasena)
+        {
+            try
+            {
+                Persona login = new Persona();
+                using (SqlConnection connection = new SqlConnection(cadena))
+                {
+                    connection.Open();
+                    using (SqlCommand cmd = new SqlCommand("pr_Login", connection))
+                    {
+                        cmd.Parameters.Add("@usuario", SqlDbType.VarChar).Value = usuario;
+                        cmd.Parameters.Add("@contrasena", SqlDbType.VarChar).Value = contrasena;
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        using (SqlDataReader dr = cmd.ExecuteReader())
+                        {
+                            if (dr.HasRows)
+                            {
+                                while (dr.Read())
+                                {
+                                    login.usuarioid = dr.GetInt32(0);
+                                    login.nombreUsuario = dr.GetString(1);
+                                    login.nombrePersona = dr.GetString(2);
+                                    login.apePaterno = dr.GetString(3);
+                                    login.PerfilId = dr.GetInt32(4);
+                                    login.DescPerfil = dr.GetString(5);
+
+                                    break;
+                                }
+                            }
+                            dr.Dispose();
+                        }
+                    }
+                    connection.Close();
+                    return login;
+                }
+            }
+            catch (Exception ex)
+            {
+
+
+            }
+            return null;
+        }
+
+
     }
 }

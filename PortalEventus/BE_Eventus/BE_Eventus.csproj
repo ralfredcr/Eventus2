@@ -43,6 +43,7 @@
     <Compile Include="CategoriaBE.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="EventoBE.cs" />
+    <Compile Include="NombreSesiones.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="ReservaBE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
