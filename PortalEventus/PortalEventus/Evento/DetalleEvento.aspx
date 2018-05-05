@@ -2,81 +2,94 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
-
-    <table class="w-100">
-        <tr style="text-align: center; font-size: 23px">
-            <td colspan="2">Detalle Evento</td>
-        </tr>
-        <tr>
-            <td style="color: blue; font-size: 18px">Titulo:</td>
-
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="txtTitulo" runat="server" Width="650px" Enabled="false"></asp:TextBox>
-            </td>
-        </tr>
-        <tr>
-            <td style="color: blue; font-size: 18px">Descripción:</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="txtDescripcion" runat="server" Width="650px" Enabled="false"></asp:TextBox>
-
-            </td>
-        </tr>
-        <tr>
-            <td style="color: blue; font-size: 18px">Categoria:</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="txtCategoria" runat="server" Width="650px" Enabled="false"></asp:TextBox>
-
-            </td>
-        </tr>
-        <tr>
-            <td style="color: blue; font-size: 18px">Imagen:</td>
-        </tr>
-        <tr>
-            <td>
-               
-            </td>
-        </tr>
-        <tr>
-            <td></td>
-        </tr>
-        <tr>
-            <td>
-                <asp:Image ID="Image1" runat="server" Height="200px" Width="450px" />
-            </td>
-        </tr>
-        <tr>
-            <td style="color: blue; font-size: 18px">Fecha Inicio:</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="txtFechaInicio" runat="server"  TextMode="DateTimeLocal" Enabled="false"/>
-            </td>
-        </tr>
-        <tr>
-            <td style="color: blue; font-size: 18px">Fecha Fin:</td>
-        </tr>
-        <tr>
-            <td>
-                <asp:TextBox ID="txtFechaFin" runat="server" TextMode="DateTimeLocal" Enabled="false" />
-            </td>
-        </tr>
-        <tr>
-            <td>
-               &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td>
-                 <asp:Button ID="btnReservar" runat="server" Text="Reservar Evento" Width="300" />
-                <asp:Button ID="btnSalir" runat="server" Text="Regresar" Width="300" OnClick="btnSalir_Click" />
-            </td>
-        </tr>
-    </table>
-
+    
+    <div id="boxevent" class="container-fluid">
+        <div class="container bkbox">
+            <div class="frmbox">
+                <div class="titlebox">
+                    <p class="tittle">Detalle Evento</p>
+                </div>
+                <div class="controlbox">
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2 text-left">Título del Evento:</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2"></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10"><asp:TextBox ID="txtTitulo" runat="server" CssClass="form-control form-control-sm" Enabled="false"></asp:TextBox></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-4 ml-2 text-left">Descripción del Evento:</div>
+                        <div class="col-md-2"></div>
+                        <div class="col-md-4 ml-2"></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row pb-3">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10"><asp:TextBox ID="txtDescripcion" runat="server" CssClass="form-control form-control-sm" Enabled="false" TextMode="MultiLine" Height="100px" ></asp:TextBox></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-12 ml-2 text-left">Imagen del Evento:</div>
+                            </div>
+                            <div class="row pb-3">
+                                <asp:Image ID="Image1" runat="server" CssClass="img-fluid" Height="250px"/>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="row">
+                                <div class="col-md-12 ml-2 text-left">Fecha y Hora de Inicio:</div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-12"><asp:TextBox ID="txtFechaInicio" runat="server" CssClass="form-control form-control-sm" TextMode="DateTimeLocal" Enabled="false"/></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 ml-2 text-left">Fecha y Hora de Termino:</div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-12"><asp:TextBox ID="txtFechaFin" runat="server" CssClass="form-control form-control-sm" TextMode="DateTimeLocal" Enabled="false" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 ml-2 text-left">Cetegoría del Evento:</div>
+                            </div>
+                            <div class="row pb-3">
+                                <div class="col-md-12"><asp:TextBox ID="txtCategoria" runat="server" CssClass="form-control form-control-sm" Enabled="false"></asp:TextBox></div>
+                            </div>
+                        </div>
+                        <div class="col-md-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-1"></div>
+                        <div class="col-md-10 linetopbox"></div>
+                        <div class="col-md-1"></div>
+                    </div>
+                </div>
+                <div class="footerbox">
+                    <div class="row">
+                        <div class="col-md-12"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="row pb-5 pt-4">
+                <div class="col-md-4"></div>
+                <div class="col-md-2">
+				    <asp:Button ID="btnReservar" runat="server" CssClass="form-control btn-info" Text="Reservar Evento" />
+                </div>
+                <div class="col-md-2">
+                    <asp:Button ID="btnSalir" runat="server" CssClass="form-control btn-light" Text="Regresar" OnClick="btnSalir_Click" />
+                </div>
+                <div class="col-md-4"></div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
