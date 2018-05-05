@@ -91,7 +91,8 @@ namespace PortalEventus.Evento
             gEvento.DataSource = lista;
             gEvento.DataBind();
 
-
+            dtlEvents.DataSource = lista;
+            dtlEvents.DataBind();
         }
 
         

@@ -28,10 +28,7 @@ namespace PortalEventus
 
                     lknIniciar.Visible = false;
                     lknRegistrar.Visible = false;
-                }
-
-
-                    
+                }                   
             }
                 
         }
