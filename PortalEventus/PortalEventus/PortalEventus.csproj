@@ -83,7 +83,7 @@
     <Content Include="Evento\DetalleEvento.aspx" />
     <Content Include="Evento\ListarEvento.aspx" />
     <Content Include="Evento\RegistrarEvento.aspx" />
-    <Content Include="Imagenes\Catalogo.png" />
+    <Content Include="Imagenes\Evento.png" />
     <Content Include="Imagenes\Inicio.png" />
     <Content Include="Imagenes\Logo.png" />
     <Content Include="Imagenes\Pagos.png" />
